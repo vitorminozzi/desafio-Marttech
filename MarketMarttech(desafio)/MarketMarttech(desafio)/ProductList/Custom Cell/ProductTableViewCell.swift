@@ -10,6 +10,8 @@ import UIKit
 protocol ProductTableViewCellDelegate {
     
     func tappedButton()
+    func tappedPlusButton(count: Int)
+    func tappedMinusButton(count: Int)
 }
 
 class ProductTableViewCell: UITableViewCell {
@@ -18,7 +20,9 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
     var delegate: ProductTableViewCellDelegate?
+    var count = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,5 +47,20 @@ class ProductTableViewCell: UITableViewCell {
         
         self.delegate?.tappedButton()
     }
+    @IBAction func tapPlusAction(_ sender: Any) {
+        
+        self.count = self.count + 1
+        self.countLabel.text = self.count.description
+        self.delegate?.tappedPlusButton(count: self.count)
+    }
     
+    @IBAction func tapMinusAction(_ sender: Any) {
+        
+        if self.count != 0 {
+            self.count = self.count - 1
+            self.countLabel.text = self.count.description
+            self.delegate?.tappedMinusButton(count: self.count)
+    }
+}
+
 }

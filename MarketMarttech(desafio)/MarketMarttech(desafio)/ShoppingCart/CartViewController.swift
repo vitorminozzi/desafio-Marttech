@@ -18,22 +18,35 @@ class CartViewController: UIViewController {
     @IBOutlet weak var itensQuantityLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var toTheProductButton: UIButton!
+    @IBOutlet weak var toCheckoutButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setupButton()
         self.cartTableView.delegate = self
         self.cartTableView.dataSource = self
+        self.cartTableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "CartTableViewCell")
     }
     
-
-
+    func setupButton(){
+        self.toTheProductButton.layer.borderColor = CGColor(red: 0/155, green: 0/155, blue: 0/155, alpha: 1.0)
+        self.toTheProductButton.layer.borderWidth = 3
+        self.toTheProductButton.layer.cornerRadius = 5
+        self.toCheckoutButton.layer.borderColor = CGColor(red: 0/155, green: 0/155, blue: 0/155, alpha: 1.0)
+        self.toCheckoutButton.layer.borderWidth = 3
+        self.toCheckoutButton.layer.cornerRadius = 5
+    }
+    
     @IBAction func tappedGoToShop(_ sender: Any) {
     }
     
-    @IBAction func tappedBackButton(_ sender: Any) {
+    @IBAction func backToProduct(_ sender: Any) {
+        
     }
+    
 }
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
@@ -42,7 +55,8 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: CartTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell") as? CartTableViewCell
+        return cell ?? UITableViewCell()
     }
     
     

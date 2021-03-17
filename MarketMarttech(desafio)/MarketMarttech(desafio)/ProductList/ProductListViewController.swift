@@ -40,8 +40,16 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 extension ProductListViewController: ProductTableViewCellDelegate {
+    func tappedPlusButton(count: Int) {
+        print("Plus")
+    }
+    
+    func tappedMinusButton(count: Int) {
+        print("Minus")
+    }
+    
     func tappedButton() {
-        print("Produto Adicionado")
+        performSegue(withIdentifier: SegueType.toCart.rawValue, sender: nil)
     }
 }
 
