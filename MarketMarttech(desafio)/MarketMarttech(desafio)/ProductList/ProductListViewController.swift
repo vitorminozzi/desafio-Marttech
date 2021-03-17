@@ -15,6 +15,7 @@ class ProductListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel.delegate = self
         viewModel.getProductList()
         self.productTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductTableViewCell")
         self.productTableView.delegate = self
@@ -30,8 +31,30 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ProductTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell") as? ProductTableViewCell
-        
+        cell?.setupCell(withData: viewModel.getCellData(index: indexPath.row), delegate: self)
         return cell ?? UITableViewCell()
     }
     
 }
+
+extension ProductListViewController: ProductTableViewCellDelegate {
+    func tappedButton() {
+        print("Produto Adicionado")
+    }
+}
+
+extension ProductListViewController: ProductListViewModelDelegate {
+    func successGetProduct(success: Bool) {
+        DispatchQueue.main.async {
+            [weak self] in
+            if success == true {
+                self?.productTableView.reloadData()
+            }
+        }
+    }
+    }
+    
+        
+    
+    
+
