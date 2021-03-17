@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductTableViewCell" id="KGk-i7-Jjw" customClass="ProductTableViewCell" customModule="MarketMarttech_desafio_" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5tf-R9-Jtk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Batata Frita" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLj-ct-zc2">
+                        <rect key="frame" x="0.0" y="0.0" width="163" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="163" id="nrX-jI-GUk"/>
+                            <constraint firstAttribute="height" constant="40" id="vut-90-0Lg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 13.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QV4-ML-7ih">
+                        <rect key="frame" x="233" y="209" width="67" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="Y1C-1d-d0O"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description label" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dg1-6N-xyo">
+                        <rect key="frame" x="20" y="201" width="132" height="49"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVH-Ov-v0p">
+                        <rect key="frame" x="253" y="5" width="47" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="3t3-le-8B3"/>
+                            <constraint firstAttribute="width" constant="47" id="iuX-DB-SZ5"/>
+                        </constraints>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal">
+                            <imageReference key="image" image="cart.badge.plus" catalog="system" symbolScale="large"/>
+                        </state>
+                        <connections>
+                            <action selector="tappedAddCart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6cK-GX-72m"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oVH-Ov-v0p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="1NM-a2-4Mc"/>
+                    <constraint firstAttribute="trailing" secondItem="5tf-R9-Jtk" secondAttribute="trailing" id="2DK-j6-rUe"/>
+                    <constraint firstItem="Dg1-6N-xyo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="6eB-F1-Giu"/>
+                    <constraint firstItem="QV4-ML-7ih" firstAttribute="leading" secondItem="Dg1-6N-xyo" secondAttribute="trailing" constant="81" id="8YR-gJ-Plc"/>
+                    <constraint firstAttribute="trailing" secondItem="QV4-ML-7ih" secondAttribute="trailing" constant="20" id="Bav-Cy-Ru5"/>
+                    <constraint firstItem="5tf-R9-Jtk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="EtO-BE-qTc"/>
+                    <constraint firstItem="5tf-R9-Jtk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="P7c-3X-ieE"/>
+                    <constraint firstItem="Dg1-6N-xyo" firstAttribute="top" secondItem="5tf-R9-Jtk" secondAttribute="bottom" id="PiX-AL-Crh"/>
+                    <constraint firstItem="dLj-ct-zc2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cSi-xa-USU"/>
+                    <constraint firstItem="dLj-ct-zc2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gbc-1f-0T6"/>
+                    <constraint firstAttribute="trailing" secondItem="oVH-Ov-v0p" secondAttribute="trailing" constant="20" symbolic="YES" id="iyk-b1-n2X"/>
+                    <constraint firstItem="QV4-ML-7ih" firstAttribute="top" secondItem="5tf-R9-Jtk" secondAttribute="bottom" constant="8" id="mbq-aq-5AG"/>
+                    <constraint firstAttribute="bottom" secondItem="Dg1-6N-xyo" secondAttribute="bottom" id="qje-84-PhG"/>
+                    <constraint firstAttribute="trailing" secondItem="QV4-ML-7ih" secondAttribute="trailing" constant="20" id="sdu-15-8WR"/>
+                    <constraint firstAttribute="bottom" secondItem="QV4-ML-7ih" secondAttribute="bottom" constant="10" id="xIK-86-A7p"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descriptionTextView" destination="Dg1-6N-xyo" id="f0G-ei-FYk"/>
+                <outlet property="priceLabel" destination="QV4-ML-7ih" id="map-hd-Q0D"/>
+                <outlet property="productImage" destination="5tf-R9-Jtk" id="j6m-To-0Ul"/>
+                <outlet property="productTitle" destination="dLj-ct-zc2" id="uvw-Hr-q3D"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
