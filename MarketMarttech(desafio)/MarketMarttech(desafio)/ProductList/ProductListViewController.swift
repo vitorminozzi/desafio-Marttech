@@ -22,6 +22,9 @@ class ProductListViewController: UIViewController {
         self.productTableView.dataSource = self
     }
 
+    @IBAction func tappedGoToCart(_ sender: Any) {
+        performSegue(withIdentifier: SegueType.toCart.rawValue, sender: nil)
+    }
 }
 
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
