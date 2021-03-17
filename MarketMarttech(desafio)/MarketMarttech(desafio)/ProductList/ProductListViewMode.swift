@@ -47,7 +47,7 @@ class ProductListViewModel {
         return self.productList?[index].description ?? ""
     }
     func getProductPrice(index: Int) -> String {
-        return String(self.productList?[index].price ?? 0.0)
+        return "R$" + String(self.productList?[index].price ?? 0.0)
     }
     
     func prepareImageString(index: Int) -> String {
