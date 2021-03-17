@@ -37,7 +37,6 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         cell?.setupCell(withData: viewModel.getCellData(index: indexPath.row), delegate: self)
         return cell ?? UITableViewCell()
     }
-    
 }
 
 extension ProductListViewController: ProductTableViewCellDelegate {

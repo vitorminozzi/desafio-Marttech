@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7204A3326028094008FC63C /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7204A3226028094008FC63C /* CartCell.swift */; };
 		E74EB3B32602502C006BB349 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74EB3B22602502C006BB349 /* ProductListViewController.swift */; };
 		E74EB3B9260254BE006BB349 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74EB3B7260254BE006BB349 /* ProductTableViewCell.swift */; };
 		E74EB3BA260254BE006BB349 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74EB3B8260254BE006BB349 /* ProductTableViewCell.xib */; };
@@ -17,6 +18,9 @@
 		E791E39426027222007D9BC5 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791E39326027222007D9BC5 /* CartViewController.swift */; };
 		E791E397260275B4007D9BC5 /* SegueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791E396260275B4007D9BC5 /* SegueType.swift */; };
 		E7C43B15260279C8002542BE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C43B14260279C8002542BE /* WelcomeViewController.swift */; };
+		E7C43B1926027C7A002542BE /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C43B1826027C7A002542BE /* CartViewModel.swift */; };
+		E7C43B1E26027DF3002542BE /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C43B1C26027DF3002542BE /* CartTableViewCell.swift */; };
+		E7C43B1F26027DF3002542BE /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C43B1D26027DF3002542BE /* CartTableViewCell.xib */; };
 		E7D2877926024BF300549363 /* NetworkResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2877826024BF300549363 /* NetworkResources.swift */; };
 		E7F430022602419B0071CF0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F430012602419B0071CF0D /* AppDelegate.swift */; };
 		E7F430042602419B0071CF0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F430032602419B0071CF0D /* SceneDelegate.swift */; };
@@ -26,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7204A3226028094008FC63C /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		E74EB3B22602502C006BB349 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		E74EB3B7260254BE006BB349 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		E74EB3B8260254BE006BB349 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
@@ -36,6 +41,9 @@
 		E791E39326027222007D9BC5 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		E791E396260275B4007D9BC5 /* SegueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueType.swift; sourceTree = "<group>"; };
 		E7C43B14260279C8002542BE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		E7C43B1826027C7A002542BE /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		E7C43B1C26027DF3002542BE /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		E7C43B1D26027DF3002542BE /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		E7D2877826024BF300549363 /* NetworkResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResources.swift; sourceTree = "<group>"; };
 		E7F42FFE2602419B0071CF0D /* MarketMarttech(desafio).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MarketMarttech(desafio).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F430012602419B0071CF0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +92,16 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		E7C43B1B26027DC4002542BE /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E7C43B1C26027DF3002542BE /* CartTableViewCell.swift */,
+				E7C43B1D26027DF3002542BE /* CartTableViewCell.xib */,
+				E7204A3226028094008FC63C /* CartCell.swift */,
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
 		E7F42FF52602419B0071CF0D = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +147,9 @@
 		E7F4301E260242A10071CF0D /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
+				E7C43B1B26027DC4002542BE /* Custom Cell */,
 				E791E39326027222007D9BC5 /* CartViewController.swift */,
+				E7C43B1826027C7A002542BE /* CartViewModel.swift */,
 			);
 			path = ShoppingCart;
 			sourceTree = "<group>";
@@ -210,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C43B1F26027DF3002542BE /* CartTableViewCell.xib in Resources */,
 				E7F4300E2602419C0071CF0D /* LaunchScreen.storyboard in Resources */,
 				E74EB3BA260254BE006BB349 /* ProductTableViewCell.xib in Resources */,
 				E7F4300B2602419C0071CF0D /* Assets.xcassets in Resources */,
@@ -225,11 +246,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E77BCAC526024AE400B3105C /* Network.swift in Sources */,
+				E7204A3326028094008FC63C /* CartCell.swift in Sources */,
 				E74EB3B9260254BE006BB349 /* ProductTableViewCell.swift in Sources */,
 				E791E39426027222007D9BC5 /* CartViewController.swift in Sources */,
+				E7C43B1926027C7A002542BE /* CartViewModel.swift in Sources */,
 				E74EB3BF26025849006BB349 /* CellData.swift in Sources */,
 				E77BCAC126024A3D00B3105C /* Product.swift in Sources */,
 				E7F430022602419B0071CF0D /* AppDelegate.swift in Sources */,
+				E7C43B1E26027DF3002542BE /* CartTableViewCell.swift in Sources */,
 				E7F430042602419B0071CF0D /* SceneDelegate.swift in Sources */,
 				E791E397260275B4007D9BC5 /* SegueType.swift in Sources */,
 				E77BCAC926024B0400B3105C /* ProductListViewMode.swift in Sources */,

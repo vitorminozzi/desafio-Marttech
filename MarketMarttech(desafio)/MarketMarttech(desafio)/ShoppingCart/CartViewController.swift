@@ -23,7 +23,8 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.cartTableView.delegate = self
+        self.cartTableView.dataSource = self
     }
     
 
@@ -32,6 +33,16 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func tappedBackButton(_ sender: Any) {
+    }
+}
+
+extension CartViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
     
     
