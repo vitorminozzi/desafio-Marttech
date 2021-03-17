@@ -54,6 +54,10 @@
 		E7F430002602419B0071CF0D /* MarketMarttech(desafio) */ = {
 			isa = PBXGroup;
 			children = (
+				E7F43021260242DE0071CF0D /* Model */,
+				E7F4301F260242A90071CF0D /* ProductList */,
+				E7F4301E260242A10071CF0D /* ShoppingCart */,
+				E7F4301D2602429A0071CF0D /* Checkout */,
 				E7F430012602419B0071CF0D /* AppDelegate.swift */,
 				E7F430032602419B0071CF0D /* SceneDelegate.swift */,
 				E7F430072602419B0071CF0D /* Main.storyboard */,
@@ -62,6 +66,34 @@
 				E7F4300F2602419C0071CF0D /* Info.plist */,
 			);
 			path = "MarketMarttech(desafio)";
+			sourceTree = "<group>";
+		};
+		E7F4301D2602429A0071CF0D /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		E7F4301E260242A10071CF0D /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShoppingCart;
+			sourceTree = "<group>";
+		};
+		E7F4301F260242A90071CF0D /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		E7F43021260242DE0071CF0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
