@@ -22,9 +22,11 @@ class CartViewController: UIViewController {
     @IBOutlet weak var toCheckoutButton: UIButton!
     var viewModel = CartViewModel()
     
+    var recipeProducts:[Product] = []
+    var recipeQuantity:[Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         self.setupButton()
         self.cartTableView.delegate = self
@@ -51,7 +53,7 @@ class CartViewController: UIViewController {
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfProducts?.count ?? 0
+        return self.recipeProducts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -15,6 +15,8 @@ class ProductListViewModel {
     
     var network = Network()
     var productList: [Product]?
+    var selectedQuantity: [Int] = []
+    var selectedProducts: [Product] = []
     weak var delegate:ProductListViewModelDelegate?
     var currentIndex = 0
     var modelCount = 0
@@ -69,30 +71,6 @@ class ProductListViewModel {
     func getImageString(index: Int) -> String {
         return self.productList?[index].imageString ?? ""
     }
-    
-//    func prepareImageString(index: Int) -> String {
-//        switch self.productList?[index].id {
-//        case 0:
-//            return "batatafrita"
-//        case 1:
-//            return "cheeseburger"
-//        case 2:
-//            return "sucodelaranja"
-//        case 3:
-//            return "sucodemelancia"
-//        case 4:
-//            return "cebolacrispy"
-//        case 5:
-//            return "cremedepapaya"
-//        case 6:
-//            return "petitgateau"
-//        case 7:
-//            return "agua"
-//        default:
-//            print("id nao encontrado")
-//        }
-//        return "N/A"
-//    }
     
     func getId(index: Int) -> Int {
         return productList?[index].id ?? 0

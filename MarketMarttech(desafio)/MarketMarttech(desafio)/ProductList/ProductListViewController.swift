@@ -7,37 +7,60 @@
 
 import UIKit
 
-class ProductListViewController: UIViewController {
 
+
+class ProductListViewController: UIViewController {
+    
+    
     var viewModel = ProductListViewModel()
     @IBOutlet weak var productTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         viewModel.delegate = self
         viewModel.getProductList()
         self.productTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductTableViewCell")
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
     }
-
+    
     @IBAction func tappedGoToCart(_ sender: Any) {
         performSegue(withIdentifier: SegueType.toCart.rawValue, sender: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cart = segue.destination as? CartViewController
-        cart?.viewModel.cartProducts?.append((Product(id: viewModel.getId(index: viewModel.currentIndex),
-                                             title: viewModel.getProductTitle(index: viewModel.currentIndex),
-                                             price: viewModel.getOriginalPrice(index: viewModel.currentIndex) ,
-                                             description: viewModel.getDescription(index: viewModel.currentIndex))))
-        cart?.viewModel.numberOfProducts?.append(viewModel.modelCount)
+    func showAlert(title: String, message: String, style: UIAlertController.Style = .alert) {
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: style)
         
+        let cancelButton:UIAlertAction = UIAlertAction(title: "Cancelar", style: .cancel) { action in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        let okButton:UIAlertAction = UIAlertAction(title: "Ok", style: .default) { action in
+            
+            self.viewModel.selectedProducts.append(Product(id: self.viewModel.getId(index: self.viewModel.currentIndex),
+                                                            title: self.viewModel.getProductTitle(index: self.viewModel.currentIndex),
+                                                            price: self.viewModel.getOriginalPrice(index: self.viewModel.currentIndex),
+                                                            description: self.viewModel.getDescription(index: self.viewModel.currentIndex),
+                                                            imageString: self.viewModel.getImageString(index: self.viewModel.currentIndex)))
+            self.viewModel.selectedQuantity.append(self.viewModel.modelCount)
+        }
+        alert.addAction(okButton)
+        alert.addAction(cancelButton)
+        self.present(alert, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueType.toCart.rawValue {
+            let cart = segue.destination as? CartViewController
+            
+            cart?.recipeProducts = viewModel.selectedProducts
+            cart?.recipeQuantity = viewModel.selectedQuantity
+        }
     }
     
+}
+
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
@@ -59,7 +82,7 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
 extension ProductListViewController: ProductTableViewCellDelegate {
     func tappedButton(index: Int) {
         self.viewModel.currentIndex = index
-        performSegue(withIdentifier: SegueType.toCart.rawValue, sender: nil)
+        self.showAlert(title: "Adicionar Produto", message: "Deseja adicionar \(self.viewModel.modelCount) produtos ao carrinho?")
     }
     
     func tappedPlusButton(count: Int) {
@@ -82,9 +105,9 @@ extension ProductListViewController: ProductListViewModelDelegate {
             }
         }
     }
-    }
-    
-        
-    
-    
+}
+
+
+
+
 
