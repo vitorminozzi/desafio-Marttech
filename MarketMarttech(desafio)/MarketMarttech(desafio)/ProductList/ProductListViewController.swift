@@ -60,6 +60,7 @@ class ProductListViewController: UIViewController {
             cart?.recipePrice = viewModel.selectedPrice
             cart?.recipeProducts = viewModel.selectedProducts
             cart?.recipeQuantity = viewModel.selectedQuantity
+         
         }
     }
     

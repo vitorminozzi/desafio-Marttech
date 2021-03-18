@@ -8,8 +8,8 @@
 import UIKit
 
 class CartViewController: UIViewController {
-
-
+    
+    
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var shopCartLabel: UILabel!
     @IBOutlet weak var shopImageLabel: UIImageView!
@@ -41,7 +41,7 @@ class CartViewController: UIViewController {
     }
     
     func setupButton(){
-     
+        
         self.toCheckoutButton.layer.borderColor = CGColor(red: 0/155, green: 0/155, blue: 0/155, alpha: 1.0)
         self.toCheckoutButton.layer.borderWidth = 3
         self.toCheckoutButton.layer.cornerRadius = 5
@@ -76,12 +76,31 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
                         count:viewModel.getOriginalQuantity(index: indexPath.row))
         return cell ?? UITableViewCell()
     }
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        
+//        if editingStyle == UITableViewCell.EditingStyle.delete {
+//            
+//            viewModel.cartProduct.remove(at: indexPath.row)
+//            viewModel.cartQuantity.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .automatic)
+//            self.cartTableView.reloadData()
+//            print(viewModel.cartProduct)
+//            print(viewModel.cartQuantity)
+//            self.itensQuantityLabel.text = String(viewModel.getReduceTotalQuantity())
+//            self.totalPriceLabel.text = String("R$ \(viewModel.getTotalOrderPrice())")
+//            self.viewModel.delegate?.quantityArray(array: viewModel.cartQuantity)
+//            self.viewModel.delegate?.priceArray(arru: viewModel.totalPrice ?? [])
+//
+//            
+//        }
+//    }
 }
 
 extension CartViewController: CartCellDelegate {
     
     func tappedPlusButton(count: Int, index: Int) {
-       
+        
         self.viewModel.cartQuantity.insert(count, at: index)
         self.viewModel.cartQuantity.remove(at: index + 1)
         self.viewModel.totalPrice?.insert(viewModel.getDoubleTotalPrice(index: index), at: index)

@@ -21,6 +21,7 @@ class CartViewModel {
     var plusCount: Int?
     var minusCount: Int?
     var totalPrice: [Double]?
+    var deletedIndex: Bool = false
     weak var delegate: CartViewModelDelegate?
 
     func getCartCellData(index: Int) -> CartCell {
@@ -49,7 +50,8 @@ class CartViewModel {
     }
     
     func getQuantity(index: Int) -> String {
-        return String(cartQuantity[index])
+
+         return String(cartQuantity[index])
     }
     
     func getDoubleTotalPrice(index:Int) -> Double {

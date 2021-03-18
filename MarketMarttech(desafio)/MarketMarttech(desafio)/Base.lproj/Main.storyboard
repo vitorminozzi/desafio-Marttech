@@ -373,15 +373,65 @@
                     </tabBar>
                     <connections>
                         <segue destination="WFn-c4-ej4" kind="relationship" relationship="viewControllers" id="alW-gk-fwQ"/>
+                        <segue destination="Ipr-mr-yku" kind="relationship" relationship="viewControllers" id="S7E-mf-Hia"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVB-LW-Ei4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-600" y="116.51785714285714"/>
         </scene>
+        <!--My Orders-->
+        <scene sceneID="Osy-LN-lgv">
+            <objects>
+                <viewController id="Ipr-mr-yku" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nn4-Ff-vLk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedidos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psN-mM-TtS">
+                                <rect key="frame" x="123" y="59" width="168" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="CCn-Iz-1Fv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d17-bB-VF0">
+                                <rect key="frame" x="0.0" y="205" width="414" height="608"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar por nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-B3-DjP">
+                                <rect key="frame" x="20" y="163" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="z7a-xF-292"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="psN-mM-TtS" firstAttribute="leading" secondItem="z7a-xF-292" secondAttribute="leading" constant="123" id="BqZ-2M-YHw"/>
+                            <constraint firstItem="d17-bB-VF0" firstAttribute="leading" secondItem="z7a-xF-292" secondAttribute="leading" id="H02-VW-cIF"/>
+                            <constraint firstItem="z7a-xF-292" firstAttribute="trailing" secondItem="psN-mM-TtS" secondAttribute="trailing" constant="123" id="POf-Uz-arq"/>
+                            <constraint firstItem="Dhh-B3-DjP" firstAttribute="top" secondItem="psN-mM-TtS" secondAttribute="bottom" constant="59" id="Tx7-Ch-gzw"/>
+                            <constraint firstItem="z7a-xF-292" firstAttribute="bottom" secondItem="d17-bB-VF0" secondAttribute="bottom" id="faa-mb-CPX"/>
+                            <constraint firstItem="Dhh-B3-DjP" firstAttribute="leading" secondItem="z7a-xF-292" secondAttribute="leading" constant="20" id="gWW-OC-kI9"/>
+                            <constraint firstItem="d17-bB-VF0" firstAttribute="top" secondItem="Dhh-B3-DjP" secondAttribute="bottom" constant="8" symbolic="YES" id="lKN-Me-kk2"/>
+                            <constraint firstItem="z7a-xF-292" firstAttribute="trailing" secondItem="d17-bB-VF0" secondAttribute="trailing" id="yCJ-2Y-Fsx"/>
+                            <constraint firstItem="psN-mM-TtS" firstAttribute="top" secondItem="z7a-xF-292" secondAttribute="top" constant="15" id="yP3-ns-R4L"/>
+                            <constraint firstItem="z7a-xF-292" firstAttribute="trailing" secondItem="Dhh-B3-DjP" secondAttribute="trailing" constant="20" id="yc7-US-Qgp"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My Orders" image="highlighter" catalog="system" id="atp-kX-flv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVo-iv-pXn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="308.69565217391306" y="812.94642857142856"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="highlighter" catalog="system" width="128" height="119"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
