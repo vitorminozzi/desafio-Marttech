@@ -11,4 +11,5 @@ enum SegueType: String {
     
     case toCart
     case toProductList
+    case toCheckout
 }

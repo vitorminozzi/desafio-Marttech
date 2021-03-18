@@ -48,8 +48,18 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func tappedGoToShop(_ sender: Any) {
+        self.performSegue(withIdentifier: SegueType.toCheckout.rawValue, sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueType.toCheckout.rawValue {
+            let checkout = segue.destination as? CheckoutViewController
+            
+            checkout?.recipeTotal = String("R$ \(viewModel.getTotalOrderPrice())")
+            checkout?.recipeProducts = viewModel.cartProduct
+            checkout?.recipeQuantity = viewModel.cartQuantity
+        }
+    }
     
 }
 
