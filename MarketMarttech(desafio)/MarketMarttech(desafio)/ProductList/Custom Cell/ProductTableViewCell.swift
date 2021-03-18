@@ -7,35 +7,27 @@
 
 import UIKit
 
-protocol ProductTableViewCellDelegate {
+protocol ProductTableViewCellDelegate: class {
     
-    func tappedButton()
+    func tappedButton(index: Int)
     func tappedPlusButton(count: Int)
     func tappedMinusButton(count: Int)
 }
 
 class ProductTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
-    var delegate: ProductTableViewCellDelegate?
+    weak var delegate: ProductTableViewCellDelegate?
     var count = 0
+    var index: Int?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    func setupCell(withData: CellData, delegate: ProductTableViewCellDelegate?) {
+    func setupCell(withData: CellData, delegate: ProductTableViewCellDelegate?, indexPath: Int?) {
         
+        self.index = indexPath
         self.productTitle.text = withData.title
         self.productImage.image = UIImage(named: withData.image ?? "")
         self.descriptionTextView.text = withData.description
@@ -44,9 +36,11 @@ class ProductTableViewCell: UITableViewCell {
     }
     
     @IBAction func tappedAddCart(_ sender: Any) {
+        guard let index = index else { return }
+        self.delegate?.tappedButton(index: index)
         
-        self.delegate?.tappedButton()
     }
+    
     @IBAction func tapPlusAction(_ sender: Any) {
         
         self.count = self.count + 1
@@ -60,7 +54,7 @@ class ProductTableViewCell: UITableViewCell {
             self.count = self.count - 1
             self.countLabel.text = self.count.description
             self.delegate?.tappedMinusButton(count: self.count)
+        }
     }
-}
-
+    
 }

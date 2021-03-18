@@ -25,31 +25,51 @@ class ProductListViewController: UIViewController {
     @IBAction func tappedGoToCart(_ sender: Any) {
         performSegue(withIdentifier: SegueType.toCart.rawValue, sender: nil)
     }
-}
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cart = segue.destination as? CartViewController
+        cart?.viewModel.cartProducts?.append((Product(id: viewModel.getId(index: viewModel.currentIndex),
+                                             title: viewModel.getProductTitle(index: viewModel.currentIndex),
+                                             price: viewModel.getOriginalPrice(index: viewModel.currentIndex) ,
+                                             description: viewModel.getDescription(index: viewModel.currentIndex))))
+        cart?.viewModel.numberOfProducts?.append(viewModel.modelCount)
+        
+    }
+    
+    }
+    
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.numberOfSections()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return viewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ProductTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell") as? ProductTableViewCell
-        cell?.setupCell(withData: viewModel.getCellData(index: indexPath.row), delegate: self)
-        return cell ?? UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell") as? ProductTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.setupCell(withData: viewModel.getCellData(index: indexPath.row), delegate: self, indexPath: indexPath.row)
+        return cell
     }
 }
 
 extension ProductListViewController: ProductTableViewCellDelegate {
+    func tappedButton(index: Int) {
+        self.viewModel.currentIndex = index
+        performSegue(withIdentifier: SegueType.toCart.rawValue, sender: nil)
+    }
+    
     func tappedPlusButton(count: Int) {
         print("Plus")
+        self.viewModel.modelCount = count
     }
     
     func tappedMinusButton(count: Int) {
         print("Minus")
-    }
-    
-    func tappedButton() {
-        performSegue(withIdentifier: SegueType.toCart.rawValue, sender: nil)
+        self.viewModel.modelCount = count
     }
 }
 

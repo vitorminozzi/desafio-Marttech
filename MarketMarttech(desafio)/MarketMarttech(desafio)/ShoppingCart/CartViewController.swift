@@ -20,11 +20,12 @@ class CartViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var toTheProductButton: UIButton!
     @IBOutlet weak var toCheckoutButton: UIButton!
-    
+    var viewModel = CartViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         self.setupButton()
         self.cartTableView.delegate = self
         self.cartTableView.dataSource = self
@@ -44,18 +45,18 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func backToProduct(_ sender: Any) {
-        
     }
     
 }
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return viewModel.numberOfProducts?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CartTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell") as? CartTableViewCell
+        cell?.setupCell(withData: viewModel.getCartCellData(index: indexPath.row))
         return cell ?? UITableViewCell()
     }
     

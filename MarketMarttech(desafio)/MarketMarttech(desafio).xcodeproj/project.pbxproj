@@ -147,9 +147,9 @@
 		E7F4301E260242A10071CF0D /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
-				E7C43B1B26027DC4002542BE /* Custom Cell */,
-				E791E39326027222007D9BC5 /* CartViewController.swift */,
 				E7C43B1826027C7A002542BE /* CartViewModel.swift */,
+				E791E39326027222007D9BC5 /* CartViewController.swift */,
+				E7C43B1B26027DC4002542BE /* Custom Cell */,
 			);
 			path = ShoppingCart;
 			sourceTree = "<group>";
@@ -157,9 +157,9 @@
 		E7F4301F260242A90071CF0D /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
-				E74EB3B52602549A006BB349 /* Custom Cell */,
-				E77BCAC826024B0400B3105C /* ProductListViewMode.swift */,
 				E74EB3B22602502C006BB349 /* ProductListViewController.swift */,
+				E77BCAC826024B0400B3105C /* ProductListViewMode.swift */,
+				E74EB3B52602549A006BB349 /* Custom Cell */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
