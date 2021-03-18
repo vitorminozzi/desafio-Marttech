@@ -383,7 +383,7 @@
         <!--My Orders-->
         <scene sceneID="Osy-LN-lgv">
             <objects>
-                <viewController id="Ipr-mr-yku" sceneMemberID="viewController">
+                <viewController id="Ipr-mr-yku" customClass="OrderListViewController" customModule="MarketMarttech_desafio_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nn4-Ff-vLk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -397,7 +397,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d17-bB-VF0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d17-bB-VF0">
                                 <rect key="frame" x="0.0" y="205" width="414" height="608"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -423,6 +423,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Orders" image="highlighter" catalog="system" id="atp-kX-flv"/>
+                    <connections>
+                        <outlet property="orderListTableView" destination="d17-bB-VF0" id="QhT-Av-D5B"/>
+                        <outlet property="orderListTitleLabel" destination="psN-mM-TtS" id="uZ8-wp-YfJ"/>
+                        <outlet property="searchTextField" destination="Dhh-B3-DjP" id="2VR-Fc-TMd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVo-iv-pXn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

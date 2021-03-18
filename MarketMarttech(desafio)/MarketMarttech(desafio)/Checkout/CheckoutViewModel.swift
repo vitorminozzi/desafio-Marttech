@@ -14,7 +14,7 @@ class CheckoutViewModel {
     var orderProducts:[Product]?
     var name:String?
     var cpf:String?
-    
+    var order:[Orders] = []
     
     func getCheckoutCellData(index: Int) -> CheckoutCellData {
         return CheckoutCellData(image: getCheckoutImage(index: index),

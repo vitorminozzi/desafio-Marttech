@@ -60,6 +60,28 @@ class CartViewController: UIViewController {
             checkout?.recipeQuantity = viewModel.cartQuantity
         }
     }
+//    func showAlert(title: String, message: String, style: UIAlertController.Style = .alert, index: Int) {
+//        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: style)
+//
+//        let cancelButton:UIAlertAction = UIAlertAction(title: "Cancelar", style: .cancel) { action in
+//            self.dismiss(animated: true, completion: nil)
+//        }
+//
+//        let okButton:UIAlertAction = UIAlertAction(title: "Ok", style: .default) { [weak self] action in
+//
+//            self?.viewModel.cartProduct.remove(at: index)
+//            self?.viewModel.cartQuantity.remove(at: index)
+//            self?.viewModel.totalPrice?.remove(at: index)
+//            self?.itensQuantityLabel.text = String(self?.viewModel.getReduceTotalQuantity() ?? 0)
+//            self?.cartTableView.reloadData()
+//            self?.viewModel.delegate?.quantityArray(array: self?.viewModel.cartQuantity ?? [])
+//            self?.viewModel.delegate?.priceArray(arru: self?.viewModel.totalPrice ?? [])
+//
+//        }
+//        alert.addAction(okButton)
+//        alert.addAction(cancelButton)
+//        self.present(alert, animated: true, completion: nil)
+//    }
     
 }
 
@@ -76,25 +98,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
                         count:viewModel.getOriginalQuantity(index: indexPath.row))
         return cell ?? UITableViewCell()
     }
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        
-//        if editingStyle == UITableViewCell.EditingStyle.delete {
-//            
-//            viewModel.cartProduct.remove(at: indexPath.row)
-//            viewModel.cartQuantity.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .automatic)
-//            self.cartTableView.reloadData()
-//            print(viewModel.cartProduct)
-//            print(viewModel.cartQuantity)
-//            self.itensQuantityLabel.text = String(viewModel.getReduceTotalQuantity())
-//            self.totalPriceLabel.text = String("R$ \(viewModel.getTotalOrderPrice())")
-//            self.viewModel.delegate?.quantityArray(array: viewModel.cartQuantity)
-//            self.viewModel.delegate?.priceArray(arru: viewModel.totalPrice ?? [])
-//
-//            
-//        }
-//    }
+
 }
 
 extension CartViewController: CartCellDelegate {
@@ -113,6 +117,10 @@ extension CartViewController: CartCellDelegate {
     }
     
     func tappedMinusButton(count: Int, index: Int) {
+//        if count < 1 {
+//            showAlert(title: "Deletar Item", message: "Deseja deletar o item?", style: .alert, index: index)
+//            self.totalPriceLabel.text = String("R$ \(self.viewModel.getTotalOrderPrice())")
+//        }
         self.viewModel.cartQuantity.insert(count, at: index)
         self.viewModel.cartQuantity.remove(at: index + 1)
         self.viewModel.totalPrice?.insert(viewModel.getDoubleTotalPrice(index: index), at: index)

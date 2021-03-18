@@ -24,6 +24,7 @@ class CheckoutViewController: UIViewController {
     var recipeTotal: String = ""
     var viewModel = CheckoutViewModel()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +39,12 @@ class CheckoutViewController: UIViewController {
     }
     
     @IBAction func tappedCheckoutButton(_ sender: Any) {
+       
+        viewModel.order.append(Orders(name: nameTextField.text,
+                                      cpf: cpfTextField.text,
+                                      itens: viewModel.getQuantity(),
+                                      total: viewModel.getTotalString(),
+                                      products: viewModel.orderProducts))
     }
 }
 

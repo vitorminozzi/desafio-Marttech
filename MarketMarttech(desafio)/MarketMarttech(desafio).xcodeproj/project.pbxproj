@@ -12,7 +12,6 @@
 		E71059DE2603905700B641CE /* CheckoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71059DC2603905700B641CE /* CheckoutTableViewCell.swift */; };
 		E71059DF2603905700B641CE /* CheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71059DD2603905700B641CE /* CheckoutTableViewCell.xib */; };
 		E71059E32603922E00B641CE /* CheckoutCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71059E22603922E00B641CE /* CheckoutCellData.swift */; };
-		E71059E726039B6D00B641CE /* Pedidos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71059E626039B6D00B641CE /* Pedidos.swift */; };
 		E7204A3326028094008FC63C /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7204A3226028094008FC63C /* CartCell.swift */; };
 		E74EB3B32602502C006BB349 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74EB3B22602502C006BB349 /* ProductListViewController.swift */; };
 		E74EB3B9260254BE006BB349 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74EB3B7260254BE006BB349 /* ProductTableViewCell.swift */; };
@@ -27,6 +26,12 @@
 		E7C43B1E26027DF3002542BE /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C43B1C26027DF3002542BE /* CartTableViewCell.swift */; };
 		E7C43B1F26027DF3002542BE /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C43B1D26027DF3002542BE /* CartTableViewCell.xib */; };
 		E7D2877926024BF300549363 /* NetworkResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2877826024BF300549363 /* NetworkResources.swift */; };
+		E7D4BFE02603C948003AD77D /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4BFDF2603C948003AD77D /* OrderListViewController.swift */; };
+		E7D4BFE52603CBB6003AD77D /* OrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4BFE32603CBB6003AD77D /* OrderListTableViewCell.swift */; };
+		E7D4BFE62603CBB6003AD77D /* OrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D4BFE42603CBB6003AD77D /* OrderListTableViewCell.xib */; };
+		E7D4BFEA2603CE86003AD77D /* OrderCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4BFE92603CE86003AD77D /* OrderCellData.swift */; };
+		E7D4BFED2603CFCB003AD77D /* OrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4BFEC2603CFCB003AD77D /* OrderListViewModel.swift */; };
+		E7D4BFF12603D026003AD77D /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4BFF02603D026003AD77D /* Orders.swift */; };
 		E7F430022602419B0071CF0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F430012602419B0071CF0D /* AppDelegate.swift */; };
 		E7F430042602419B0071CF0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F430032602419B0071CF0D /* SceneDelegate.swift */; };
 		E7F430092602419B0071CF0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F430072602419B0071CF0D /* Main.storyboard */; };
@@ -40,7 +45,6 @@
 		E71059DC2603905700B641CE /* CheckoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewCell.swift; sourceTree = "<group>"; };
 		E71059DD2603905700B641CE /* CheckoutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutTableViewCell.xib; sourceTree = "<group>"; };
 		E71059E22603922E00B641CE /* CheckoutCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCellData.swift; sourceTree = "<group>"; };
-		E71059E626039B6D00B641CE /* Pedidos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedidos.swift; sourceTree = "<group>"; };
 		E7204A3226028094008FC63C /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		E74EB3B22602502C006BB349 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		E74EB3B7260254BE006BB349 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -55,6 +59,12 @@
 		E7C43B1C26027DF3002542BE /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		E7C43B1D26027DF3002542BE /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		E7D2877826024BF300549363 /* NetworkResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResources.swift; sourceTree = "<group>"; };
+		E7D4BFDF2603C948003AD77D /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		E7D4BFE32603CBB6003AD77D /* OrderListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListTableViewCell.swift; sourceTree = "<group>"; };
+		E7D4BFE42603CBB6003AD77D /* OrderListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListTableViewCell.xib; sourceTree = "<group>"; };
+		E7D4BFE92603CE86003AD77D /* OrderCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellData.swift; sourceTree = "<group>"; };
+		E7D4BFEC2603CFCB003AD77D /* OrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewModel.swift; sourceTree = "<group>"; };
+		E7D4BFF02603D026003AD77D /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		E7F42FFE2602419B0071CF0D /* MarketMarttech(desafio).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MarketMarttech(desafio).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F430012602419B0071CF0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7F430032602419B0071CF0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +124,34 @@
 			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
+		E7D4BFDD2603C916003AD77D /* MyOrders */ = {
+			isa = PBXGroup;
+			children = (
+				E7D4BFDE2603C924003AD77D /* OrderList */,
+			);
+			path = MyOrders;
+			sourceTree = "<group>";
+		};
+		E7D4BFDE2603C924003AD77D /* OrderList */ = {
+			isa = PBXGroup;
+			children = (
+				E7D4BFE22603CA8E003AD77D /* CustomCell */,
+				E7D4BFDF2603C948003AD77D /* OrderListViewController.swift */,
+				E7D4BFEC2603CFCB003AD77D /* OrderListViewModel.swift */,
+			);
+			path = OrderList;
+			sourceTree = "<group>";
+		};
+		E7D4BFE22603CA8E003AD77D /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7D4BFE32603CBB6003AD77D /* OrderListTableViewCell.swift */,
+				E7D4BFE42603CBB6003AD77D /* OrderListTableViewCell.xib */,
+				E7D4BFE92603CE86003AD77D /* OrderCellData.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		E7F42FF52602419B0071CF0D = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +171,7 @@
 		E7F430002602419B0071CF0D /* MarketMarttech(desafio) */ = {
 			isa = PBXGroup;
 			children = (
+				E7D4BFDD2603C916003AD77D /* MyOrders */,
 				E77BCAC326024AB600B3105C /* Network */,
 				E7F43021260242DE0071CF0D /* Model */,
 				E7F4301F260242A90071CF0D /* ProductList */,
@@ -183,7 +222,7 @@
 			children = (
 				E77BCAC026024A3D00B3105C /* Product.swift */,
 				E791E396260275B4007D9BC5 /* SegueType.swift */,
-				E71059E626039B6D00B641CE /* Pedidos.swift */,
+				E7D4BFF02603D026003AD77D /* Orders.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,6 +289,7 @@
 				E7F4300E2602419C0071CF0D /* LaunchScreen.storyboard in Resources */,
 				E74EB3BA260254BE006BB349 /* ProductTableViewCell.xib in Resources */,
 				E7F4300B2602419C0071CF0D /* Assets.xcassets in Resources */,
+				E7D4BFE62603CBB6003AD77D /* OrderListTableViewCell.xib in Resources */,
 				E7F430092602419B0071CF0D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,13 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7D4BFED2603CFCB003AD77D /* OrderListViewModel.swift in Sources */,
 				E77BCAC526024AE400B3105C /* Network.swift in Sources */,
-				E71059E726039B6D00B641CE /* Pedidos.swift in Sources */,
 				E7204A3326028094008FC63C /* CartCell.swift in Sources */,
 				E74EB3B9260254BE006BB349 /* ProductTableViewCell.swift in Sources */,
 				E71059DE2603905700B641CE /* CheckoutTableViewCell.swift in Sources */,
 				E791E39426027222007D9BC5 /* CartViewController.swift in Sources */,
 				E71059D926038EB700B641CE /* CheckoutViewModel.swift in Sources */,
+				E7D4BFF12603D026003AD77D /* Orders.swift in Sources */,
 				E7C43B1926027C7A002542BE /* CartViewModel.swift in Sources */,
 				E74EB3BF26025849006BB349 /* CellData.swift in Sources */,
 				E77BCAC126024A3D00B3105C /* Product.swift in Sources */,
@@ -276,9 +317,12 @@
 				E7F430042602419B0071CF0D /* SceneDelegate.swift in Sources */,
 				E791E397260275B4007D9BC5 /* SegueType.swift in Sources */,
 				E77BCAC926024B0400B3105C /* ProductListViewMode.swift in Sources */,
+				E7D4BFE02603C948003AD77D /* OrderListViewController.swift in Sources */,
 				E74EB3B32602502C006BB349 /* ProductListViewController.swift in Sources */,
 				E71059E32603922E00B641CE /* CheckoutCellData.swift in Sources */,
+				E7D4BFE52603CBB6003AD77D /* OrderListTableViewCell.swift in Sources */,
 				E71059D626038C7500B641CE /* CheckoutViewController.swift in Sources */,
+				E7D4BFEA2603CE86003AD77D /* OrderCellData.swift in Sources */,
 				E7D2877926024BF300549363 /* NetworkResources.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
