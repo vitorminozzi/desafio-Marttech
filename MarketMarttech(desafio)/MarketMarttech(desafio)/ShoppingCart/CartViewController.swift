@@ -18,7 +18,6 @@ class CartViewController: UIViewController {
     @IBOutlet weak var itensQuantityLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
-    @IBOutlet weak var toTheProductButton: UIButton!
     @IBOutlet weak var toCheckoutButton: UIButton!
     var viewModel = CartViewModel()
     
@@ -42,9 +41,7 @@ class CartViewController: UIViewController {
     }
     
     func setupButton(){
-        self.toTheProductButton.layer.borderColor = CGColor(red: 0/155, green: 0/155, blue: 0/155, alpha: 1.0)
-        self.toTheProductButton.layer.borderWidth = 3
-        self.toTheProductButton.layer.cornerRadius = 5
+     
         self.toCheckoutButton.layer.borderColor = CGColor(red: 0/155, green: 0/155, blue: 0/155, alpha: 1.0)
         self.toCheckoutButton.layer.borderWidth = 3
         self.toCheckoutButton.layer.cornerRadius = 5
@@ -53,8 +50,6 @@ class CartViewController: UIViewController {
     @IBAction func tappedGoToShop(_ sender: Any) {
     }
     
-    @IBAction func backToProduct(_ sender: Any) {
-    }
     
 }
 
