@@ -44,6 +44,8 @@ class ProductListViewController: UIViewController {
                                                             description: self.viewModel.getDescription(index: self.viewModel.currentIndex),
                                                             imageString: self.viewModel.getImageString(index: self.viewModel.currentIndex)))
             self.viewModel.selectedQuantity.append(self.viewModel.modelCount)
+            self.viewModel.selectedPrice.append(self.viewModel.getSelectedTotalPrice(index: self.viewModel.currentIndex))
+            print(self.viewModel.selectedPrice)
         }
         alert.addAction(okButton)
         alert.addAction(cancelButton)
@@ -54,6 +56,7 @@ class ProductListViewController: UIViewController {
         if segue.identifier == SegueType.toCart.rawValue {
             let cart = segue.destination as? CartViewController
             
+            cart?.recipePrice = viewModel.selectedPrice
             cart?.recipeProducts = viewModel.selectedProducts
             cart?.recipeQuantity = viewModel.selectedQuantity
         }

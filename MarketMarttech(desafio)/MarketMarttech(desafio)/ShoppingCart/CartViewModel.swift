@@ -13,6 +13,7 @@ class CartViewModel {
     var cartQuantity: [Int] = []
     var plusCount: Int?
     var minusCount: Int?
+    var totalPrice: [Double]?
 
     func getCartCellData(index: Int) -> CartCell {
         return CartCell(image: getCartImage(index: index),
@@ -21,6 +22,10 @@ class CartViewModel {
                         title: getCartTitles(index: index),
                         totalPrice: getTotalPrice(index: index),
                         description:getDescription(index: index))
+    }
+    
+    func getTotalOrderPrice() -> Double {
+        return totalPrice?.reduce(0, +) ?? 0
     }
     
     func getCartTitles(index: Int) -> String {

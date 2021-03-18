@@ -24,12 +24,17 @@ class CartViewController: UIViewController {
     
     var recipeProducts:[Product] = []
     var recipeQuantity:[Int] = []
+    var recipePrice:[Double] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.totalPrice = recipePrice
         viewModel.cartProduct = recipeProducts
         viewModel.cartQuantity = recipeQuantity
+        self.totalPriceLabel.text = String("R$ \(viewModel.getTotalOrderPrice())")
+        self.itensQuantityLabel.text = String(viewModel.getReduceTotalQuantity())
+        
         self.setupButton()
         self.cartTableView.delegate = self
         self.cartTableView.dataSource = self
@@ -74,6 +79,7 @@ extension CartViewController: CartCellDelegate {
         self.viewModel.cartQuantity.insert(count, at: index)
         self.viewModel.cartQuantity.remove(at: index + 1)
         self.itensQuantityLabel.text = String(viewModel.getReduceTotalQuantity())
+        self.totalPriceLabel.text = String("R$ \(viewModel.getTotalOrderPrice())")
         self.cartTableView.reloadData()
     }
     
@@ -81,6 +87,7 @@ extension CartViewController: CartCellDelegate {
         self.viewModel.cartQuantity.insert(count, at: index)
         self.viewModel.cartQuantity.remove(at: index + 1)
         self.itensQuantityLabel.text = String(viewModel.getReduceTotalQuantity())
+        self.totalPriceLabel.text = String("R$ \(viewModel.getTotalOrderPrice())")
         self.cartTableView.reloadData()
     }
 }

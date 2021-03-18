@@ -15,6 +15,7 @@ class ProductListViewModel {
     
     var network = Network()
     var productList: [Product]?
+    var selectedPrice: [Double] = []
     var selectedQuantity: [Int] = []
     var selectedProducts: [Product] = []
     weak var delegate:ProductListViewModelDelegate?
@@ -42,6 +43,10 @@ class ProductListViewModel {
                         price: self.getProductPrice(index: index),
                         image: self.getImageString(index: index))
         
+    }
+    
+    func getSelectedTotalPrice(index: Int) -> Double {
+        return Double(self.modelCount) * (productList?[index].price ?? 0)
     }
     
     func numberOfSections() -> Int {
