@@ -19,6 +19,7 @@ class OrderListViewController: UIViewController {
         orderListTableView.register(UINib(nibName: "OrderListTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderListTableViewCell")
         orderListTableView.delegate = self
         orderListTableView.dataSource = self
+        viewModel.getOrders()
     }
 
 }
@@ -32,6 +33,7 @@ extension OrderListViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "OrderListTableViewCell") as? OrderListTableViewCell else {
             return UITableViewCell()
         }
+        cell.setupCell(withData: viewModel.getOrdersCellData(index: indexPath.row) ?? OrderCellData())
         return cell
     }
     

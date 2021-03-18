@@ -14,7 +14,20 @@ class CheckoutViewModel {
     var orderProducts:[Product]?
     var name:String?
     var cpf:String?
-    var order:[Orders] = []
+    var order:Orders?
+    
+    func encode(toEncode: Orders) {
+        
+        do {
+            
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(toEncode)
+            UserDefaults.standard.setValue(data, forKey: "orders")
+        }catch {
+            
+            print(error)
+        }
+    }
     
     func getCheckoutCellData(index: Int) -> CheckoutCellData {
         return CheckoutCellData(image: getCheckoutImage(index: index),
