@@ -7,6 +7,13 @@
 
 import Foundation
 
+protocol CartViewModelDelegate: class {
+    
+    func quantityArray(array: [Int])
+    func priceArray(arru: [Double])
+}
+
+
 class CartViewModel {
     
     var cartProduct: [Product] = []
@@ -14,6 +21,7 @@ class CartViewModel {
     var plusCount: Int?
     var minusCount: Int?
     var totalPrice: [Double]?
+    weak var delegate: CartViewModelDelegate?
 
     func getCartCellData(index: Int) -> CartCell {
         return CartCell(image: getCartImage(index: index),
@@ -42,6 +50,11 @@ class CartViewModel {
     
     func getQuantity(index: Int) -> String {
         return String(cartQuantity[index])
+    }
+    
+    func getDoubleTotalPrice(index:Int) -> Double {
+        let totalPrice = self.getDoubleNumber(int: cartQuantity[index]) * (cartProduct[index].price ?? 0)
+        return totalPrice
     }
     
     func getTotalPrice(index: Int) -> String {

@@ -76,18 +76,27 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
 extension CartViewController: CartCellDelegate {
     
     func tappedPlusButton(count: Int, index: Int) {
+       
         self.viewModel.cartQuantity.insert(count, at: index)
         self.viewModel.cartQuantity.remove(at: index + 1)
+        self.viewModel.totalPrice?.insert(viewModel.getDoubleTotalPrice(index: index), at: index)
+        self.viewModel.totalPrice?.remove(at: index + 1)
         self.itensQuantityLabel.text = String(viewModel.getReduceTotalQuantity())
         self.totalPriceLabel.text = String("R$ \(viewModel.getTotalOrderPrice())")
         self.cartTableView.reloadData()
+        self.viewModel.delegate?.quantityArray(array: viewModel.cartQuantity)
+        self.viewModel.delegate?.priceArray(arru: viewModel.totalPrice ?? [])
     }
     
     func tappedMinusButton(count: Int, index: Int) {
         self.viewModel.cartQuantity.insert(count, at: index)
         self.viewModel.cartQuantity.remove(at: index + 1)
+        self.viewModel.totalPrice?.insert(viewModel.getDoubleTotalPrice(index: index), at: index)
+        self.viewModel.totalPrice?.remove(at: index + 1)
         self.itensQuantityLabel.text = String(viewModel.getReduceTotalQuantity())
         self.totalPriceLabel.text = String("R$ \(viewModel.getTotalOrderPrice())")
         self.cartTableView.reloadData()
+        self.viewModel.delegate?.quantityArray(array: viewModel.cartQuantity)
+        self.viewModel.delegate?.priceArray(arru: viewModel.totalPrice ?? [])
     }
 }

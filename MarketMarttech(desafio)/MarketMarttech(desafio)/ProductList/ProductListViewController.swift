@@ -56,6 +56,7 @@ class ProductListViewController: UIViewController {
         if segue.identifier == SegueType.toCart.rawValue {
             let cart = segue.destination as? CartViewController
             
+            cart?.viewModel.delegate = self
             cart?.recipePrice = viewModel.selectedPrice
             cart?.recipeProducts = viewModel.selectedProducts
             cart?.recipeQuantity = viewModel.selectedQuantity
@@ -110,7 +111,17 @@ extension ProductListViewController: ProductListViewModelDelegate {
     }
 }
 
-
+extension ProductListViewController: CartViewModelDelegate {
+    func priceArray(arru: [Double]) {
+        self.viewModel.selectedPrice = arru
+    }
+    
+    func quantityArray(array: [Int]) {
+        self.viewModel.selectedQuantity = array
+    }
+    
+    
+}
 
 
 
