@@ -191,7 +191,6 @@
                     <connections>
                         <outlet property="backToProductButton" destination="jHj-5T-u9a" id="B9b-Sz-UOu"/>
                         <outlet property="cartTableView" destination="hQp-A9-wuC" id="gJb-QY-kNU"/>
-                        <outlet property="endShopButton" destination="9wc-bn-skw" id="u4b-gS-hVV"/>
                         <outlet property="itensLabel" destination="EvS-Fh-zqy" id="L8o-fg-Pbd"/>
                         <outlet property="itensQuantityLabel" destination="0Yz-Dd-1GU" id="Zcc-e6-mpP"/>
                         <outlet property="priceLabel" destination="i8f-5F-hbH" id="Ig4-zR-i0B"/>

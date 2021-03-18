@@ -9,33 +9,39 @@ import Foundation
 
 class CartViewModel {
     
-    var cartProducts:[Product]?
-    var numberOfProducts:[Int]?
-    var view = CartViewController()
+    var cartProduct: [Product] = []
+    var cartQuantity: [Int] = []
+    var plusCount: Int?
+    var minusCount: Int?
 
     func getCartCellData(index: Int) -> CartCell {
-        return CartCell(image: self.getCartImage(index: index),
-                        quantity: self.getQuantity(index: index),
-                        price: self.getCartPrice(index: index),
-                        title: self.getCartTitles(index: index),
-                        totalPrice: self.getTotalPrice(index: index))
+        return CartCell(image: getCartImage(index: index),
+                        quantity: getQuantity(index: index),
+                        price: getCartPrice(index: index),
+                        title: getCartTitles(index: index),
+                        totalPrice: getTotalPrice(index: index),
+                        description:getDescription(index: index))
     }
     
     func getCartTitles(index: Int) -> String {
-        return view.recipeProducts[index].title ?? ""
+        return cartProduct[index].title ?? ""
     }
     
     func getCartPrice(index: Int) -> String {
-        return String(view.recipeProducts[index].price ?? 0)
+        return "R$\(String(cartProduct[index].price ?? 0))"
+    }
+    
+    func getOriginalQuantity(index: Int) -> Int {
+        return cartQuantity[index]
     }
     
     func getQuantity(index: Int) -> String {
-        return String(view.recipeQuantity[index])
+        return String(cartQuantity[index])
     }
     
     func getTotalPrice(index: Int) -> String {
-        let totalPrice = self.getDoubleNumber(int: view.recipeQuantity[index]) * (view.recipeProducts[index].price ?? 0)
-        return totalPrice.description
+        let totalPrice = self.getDoubleNumber(int: cartQuantity[index]) * (cartProduct[index].price ?? 0)
+        return "R$\(totalPrice.description)"
     }
     
     func getDoubleNumber(int : Int) -> Double {
@@ -44,8 +50,15 @@ class CartViewModel {
     }
 
     func getCartImage(index: Int) -> String {
-        return view.recipeProducts[index].imageString ?? ""
+        return cartProduct[index].imageString ?? ""
         
 }
+    func getDescription(index: Int) -> String {
+        return cartProduct[index].description ?? ""
+    }
+    
+    func getReduceTotalQuantity() -> Int {
+        return cartQuantity.reduce(0, +)
+    }
 
 }

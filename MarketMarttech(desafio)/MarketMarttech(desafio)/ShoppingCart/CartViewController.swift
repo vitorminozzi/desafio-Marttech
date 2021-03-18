@@ -9,7 +9,7 @@ import UIKit
 
 class CartViewController: UIViewController {
 
-    @IBOutlet weak var endShopButton: UIButton!
+
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var shopCartLabel: UILabel!
     @IBOutlet weak var shopImageLabel: UIImageView!
@@ -28,6 +28,8 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.cartProduct = recipeProducts
+        viewModel.cartQuantity = recipeQuantity
         self.setupButton()
         self.cartTableView.delegate = self
         self.cartTableView.dataSource = self
@@ -53,14 +55,32 @@ class CartViewController: UIViewController {
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.recipeProducts.count
+        return self.viewModel.cartProduct.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CartTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell") as? CartTableViewCell
-        cell?.setupCell(withData: viewModel.getCartCellData(index: indexPath.row))
+        cell?.setupCell(withData: viewModel.getCartCellData(index: indexPath.row),
+                        delegate: self,
+                        indexPath: indexPath.row,
+                        count:viewModel.getOriginalQuantity(index: indexPath.row))
         return cell ?? UITableViewCell()
     }
+}
+
+extension CartViewController: CartCellDelegate {
     
+    func tappedPlusButton(count: Int, index: Int) {
+        self.viewModel.cartQuantity.insert(count, at: index)
+        self.viewModel.cartQuantity.remove(at: index + 1)
+        self.itensQuantityLabel.text = String(viewModel.getReduceTotalQuantity())
+        self.cartTableView.reloadData()
+    }
     
+    func tappedMinusButton(count: Int, index: Int) {
+        self.viewModel.cartQuantity.insert(count, at: index)
+        self.viewModel.cartQuantity.remove(at: index + 1)
+        self.itensQuantityLabel.text = String(viewModel.getReduceTotalQuantity())
+        self.cartTableView.reloadData()
+    }
 }

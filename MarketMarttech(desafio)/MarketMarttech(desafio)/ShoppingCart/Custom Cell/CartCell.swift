@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 struct CartCell {
     
     var image: String?
@@ -14,4 +16,5 @@ struct CartCell {
     var price: String?
     var title: String?
     var totalPrice: String?
+    var description: String?
 }
