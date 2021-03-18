@@ -14,9 +14,9 @@ class CheckoutViewModel {
     var orderProducts:[Product]?
     var name:String?
     var cpf:String?
-    var order:Orders?
+    var orders:[Orders] = []
     
-    func encode(toEncode: Orders) {
+    func encode(toEncode: [Orders]) {
         
         do {
             
@@ -25,7 +25,7 @@ class CheckoutViewModel {
             UserDefaults.standard.setValue(data, forKey: "orders")
         }catch {
             
-            print(error)
+            print("Key???")
         }
     }
     

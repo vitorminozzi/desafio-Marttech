@@ -39,14 +39,12 @@ class CheckoutViewController: UIViewController {
     }
     
     @IBAction func tappedCheckoutButton(_ sender: Any) {
-       
-        let orderSended = Orders(name: nameTextField.text,
-                                 cpf: cpfTextField.text,
-                                 itens: viewModel.getQuantity(),
-                                 total: viewModel.getTotalString(),
-                                 products: viewModel.orderProducts)
-        
-        viewModel.encode(toEncode: orderSended)
+        viewModel.orders.append(Orders(name: nameTextField.text,
+                                       cpf: cpfTextField.text,
+                                       itens: viewModel.getQuantity(),
+                                       total: viewModel.getTotalString(),
+                                       products: viewModel.orderProducts))
+        viewModel.encode(toEncode: viewModel.orders)
     }
 }
 

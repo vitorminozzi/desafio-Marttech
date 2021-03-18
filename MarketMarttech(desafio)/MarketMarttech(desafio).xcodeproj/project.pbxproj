@@ -13,6 +13,7 @@
 		E71059DF2603905700B641CE /* CheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71059DD2603905700B641CE /* CheckoutTableViewCell.xib */; };
 		E71059E32603922E00B641CE /* CheckoutCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71059E22603922E00B641CE /* CheckoutCellData.swift */; };
 		E7204A3326028094008FC63C /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7204A3226028094008FC63C /* CartCell.swift */; };
+		E7486C9C2603F47400C7813F /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7486C9B2603F47400C7813F /* OrderDetailViewController.swift */; };
 		E74EB3B32602502C006BB349 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74EB3B22602502C006BB349 /* ProductListViewController.swift */; };
 		E74EB3B9260254BE006BB349 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74EB3B7260254BE006BB349 /* ProductTableViewCell.swift */; };
 		E74EB3BA260254BE006BB349 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74EB3B8260254BE006BB349 /* ProductTableViewCell.xib */; };
@@ -46,6 +47,7 @@
 		E71059DD2603905700B641CE /* CheckoutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutTableViewCell.xib; sourceTree = "<group>"; };
 		E71059E22603922E00B641CE /* CheckoutCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCellData.swift; sourceTree = "<group>"; };
 		E7204A3226028094008FC63C /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		E7486C9B2603F47400C7813F /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		E74EB3B22602502C006BB349 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		E74EB3B7260254BE006BB349 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		E74EB3B8260254BE006BB349 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
+		E7486C9A2603F42100C7813F /* OrderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E7486C9B2603F47400C7813F /* OrderDetailViewController.swift */,
+			);
+			path = OrderDetail;
+			sourceTree = "<group>";
+		};
 		E74EB3B52602549A006BB349 /* Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		E7D4BFDD2603C916003AD77D /* MyOrders */ = {
 			isa = PBXGroup;
 			children = (
+				E7486C9A2603F42100C7813F /* OrderDetail */,
 				E7D4BFDE2603C924003AD77D /* OrderList */,
 			);
 			path = MyOrders;
@@ -301,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7486C9C2603F47400C7813F /* OrderDetailViewController.swift in Sources */,
 				E7D4BFED2603CFCB003AD77D /* OrderListViewModel.swift in Sources */,
 				E77BCAC526024AE400B3105C /* Network.swift in Sources */,
 				E7204A3326028094008FC63C /* CartCell.swift in Sources */,

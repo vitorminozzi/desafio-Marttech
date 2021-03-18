@@ -17,14 +17,13 @@ class OrderListViewModel {
             
             do {
                 let decoder = JSONDecoder()
-                let orders = try decoder.decode(Orders.self, from: data)
-                self.orders.append(orders)
+                let orders = try decoder.decode([Orders].self, from: data)
+                self.orders = orders
             } catch {
                 print("Falha ao decodificar")
             }
             print(orders)
         }
-        
     }
         
         func getOrdersCellData(index: Int) -> OrderCellData? {
