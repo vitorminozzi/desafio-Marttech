@@ -120,9 +120,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cellImage" destination="lOZ-Rx-Wro" id="qPP-Vz-DT5"/>
                 <outlet property="descriptionLabel" destination="TjH-Rx-xdb" id="BcO-o7-v3g"/>
-                <outlet property="logoImage" destination="lOZ-Rx-Wro" id="0B9-cz-eLQ"/>
-                <outlet property="presentSubTitle" destination="G6d-rF-J70" id="E53-72-vwV"/>
                 <outlet property="priceCartLabel" destination="soL-do-yah" id="7wY-I5-eBX"/>
                 <outlet property="quantityLabel" destination="fBx-14-9NA" id="Okq-eK-3AY"/>
                 <outlet property="subtotalPriceLabel" destination="8Ny-xK-1e3" id="z3I-4N-w3q"/>

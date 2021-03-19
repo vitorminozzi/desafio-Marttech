@@ -49,13 +49,14 @@ class ProductListViewController: UIViewController {
                                                            imageString: self.viewModel.getImageString(index: self.viewModel.currentIndex)))
             self.viewModel.selectedQuantity.append(self.viewModel.modelCount)
             self.viewModel.selectedPrice.append(self.viewModel.getSelectedTotalPrice(index: self.viewModel.currentIndex))
+            // acompanhar arrays
             print(self.viewModel.selectedProducts.count)
             print(self.viewModel.selectedQuantity.count)
             print(self.viewModel.selectedPrice.count)
         }
         alert.addAction(okButton)
         alert.addAction(cancelButton)
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -91,18 +92,19 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
 extension ProductListViewController: ProductTableViewCellDelegate {
 
     func tappedButton(index: Int) {
-        self.viewModel.currentIndex = index
-        self.showAlert(title: "Adicionar Produto", message: "Deseja adicionar \(self.viewModel.modelCount) produtos ao carrinho?")
+        viewModel.currentIndex = index
+        print(viewModel.currentIndex)
+        showAlert(title: "Adicionar Produto", message: "Deseja adicionar \(self.viewModel.modelCount) produtos ao carrinho?")
     }
     
     func tappedPlusButton(count: Int) {
         print("Plus")
-        self.viewModel.modelCount = count
+        viewModel.modelCount = count
     }
     
     func tappedMinusButton(count: Int) {
         print("Minus")
-        self.viewModel.modelCount = count
+        viewModel.modelCount = count
     }
 }
 
@@ -118,12 +120,19 @@ extension ProductListViewController: ProductListViewModelDelegate {
 }
 
 extension ProductListViewController: CartViewModelDelegate {
-    func priceArray(arru: [Double]) {
-        self.viewModel.selectedPrice = arru
+    func productArray(array: [Product]) {
+        viewModel.selectedProducts = array
+    }
+    
+    func priceArray(array: [Double]) {
+        viewModel.selectedPrice = array
+        print(viewModel.selectedPrice.count)
     }
     
     func quantityArray(array: [Int]) {
-        self.viewModel.selectedQuantity = array
+        viewModel.selectedQuantity = array
+        print(viewModel.selectedQuantity.count)
+        print(viewModel.selectedProducts.count)
     }
 }
 

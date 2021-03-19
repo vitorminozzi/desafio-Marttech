@@ -8,18 +8,16 @@
 import Foundation
 
 protocol CartViewModelDelegate: class {
-    
+    func productArray(array: [Product])
     func quantityArray(array: [Int])
-    func priceArray(arru: [Double])
+    func priceArray(array: [Double])
 }
 
 class CartViewModel {
     
     var cartProduct: [Product] = []
     var cartQuantity: [Int] = []
-    var plusCount: Int?
-    var minusCount: Int?
-    var totalPrice: [Double]?
+    var cartTotalPrice: [Double]?
     var deletedIndex: Int = 0
     weak var delegate: CartViewModelDelegate?
 
@@ -29,12 +27,12 @@ class CartViewModel {
                         quantity: getQuantity(index: index),
                         price: getCartPrice(index: index),
                         title: getCartTitles(index: index),
-                        totalPrice: getTotalPrice(index: index),
+                        totalPrice: getsubtotalPrice(index: index),
                         description:getDescription(index: index))
     }
     
-    func getTotalOrderPrice() -> Double {
-        return totalPrice?.reduce(0, +) ?? 0
+    func getTotalPrice() -> Double {
+        return cartTotalPrice?.reduce(0, +) ?? 0
     }
     
     func getCartTitles(index: Int) -> String {
@@ -59,7 +57,7 @@ class CartViewModel {
         return totalPrice
     }
     
-    func getTotalPrice(index: Int) -> String {
+    func getsubtotalPrice(index: Int) -> String {
         let totalPrice = self.getDoubleNumber(int: cartQuantity[index]) * (cartProduct[index].price ?? 0)
         return "R$\(totalPrice.description)"
     }

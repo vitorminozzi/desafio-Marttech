@@ -175,13 +175,10 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="bFQ-oq-LNx"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="backToProductButton" destination="jHj-5T-u9a" id="B9b-Sz-UOu"/>
                         <outlet property="cartTableView" destination="hQp-A9-wuC" id="gJb-QY-kNU"/>
                         <outlet property="itensLabel" destination="EvS-Fh-zqy" id="L8o-fg-Pbd"/>
                         <outlet property="itensQuantityLabel" destination="0Yz-Dd-1GU" id="Zcc-e6-mpP"/>
-                        <outlet property="priceLabel" destination="i8f-5F-hbH" id="Ig4-zR-i0B"/>
-                        <outlet property="shopCartLabel" destination="4R1-AL-eCr" id="PWP-eN-TNV"/>
-                        <outlet property="shopImageLabel" destination="aaa-yg-EGG" id="6Bj-oF-XHJ"/>
+                        <outlet property="priceTextLabel" destination="i8f-5F-hbH" id="VfM-VE-LvK"/>
                         <outlet property="toCheckoutButton" destination="85c-KL-PNy" id="bH5-kf-acZ"/>
                         <outlet property="totalPriceLabel" destination="MCc-XS-4rG" id="sCI-An-6I4"/>
                         <segue destination="CBO-2p-peH" kind="show" identifier="toCheckout" id="Qbj-pt-sf7"/>

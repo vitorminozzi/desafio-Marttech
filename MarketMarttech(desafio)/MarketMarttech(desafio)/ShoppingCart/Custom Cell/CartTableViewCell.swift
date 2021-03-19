@@ -15,11 +15,10 @@ protocol CartCellDelegate: class {
 
 class CartTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceCartLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
-    @IBOutlet weak var presentSubTitle: UILabel!
     @IBOutlet weak var subtotalPriceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     weak var delegate: CartCellDelegate?
@@ -29,28 +28,26 @@ class CartTableViewCell: UITableViewCell {
     func setupCell(withData: CartCell, delegate:CartCellDelegate, indexPath: Int, count: Int) {
         
         self.count = count
-        self.index = indexPath
-        self.logoImage.image = UIImage(named: withData.image ?? "")
-        self.titleLabel.text = withData.title
-        self.priceCartLabel.text = withData.price
-        self.quantityLabel.text = withData.quantity
-        self.subtotalPriceLabel.text = withData.totalPrice
-        self.descriptionLabel.text = withData.description
+        index = indexPath
+        cellImage.image = UIImage(named: withData.image ?? "")
+        titleLabel.text = withData.title
+        priceCartLabel.text = withData.price
+        quantityLabel.text = withData.quantity
+        subtotalPriceLabel.text = withData.totalPrice
+        descriptionLabel.text = withData.description
         self.delegate = delegate
 }
     @IBAction func plusAction(_ sender: Any) {
-        self.count = (self.count ?? 0) + 1
-        self.quantityLabel.text = self.count?.description
-        self.delegate?.tappedPlusButton(count: self.count ?? 0, index: self.index ?? 0)
-        print(count)
-        print(index)
+        count = (count ?? 0) + 1
+        quantityLabel.text = count?.description
+        delegate?.tappedPlusButton(count: count ?? 0, index: index ?? 0)
     }
     
     @IBAction func minusAction(_ sender: Any) {
-        if self.count != 0 {
-            self.count = (self.count ?? 0) - 1
-            self.quantityLabel.text = self.count?.description
-            self.delegate?.tappedMinusButton(count: self.count ?? 0, index: self.index ?? 0)
+        if count != 0 {
+            count = (count ?? 0) - 1
+            quantityLabel.text = count?.description
+            delegate?.tappedMinusButton(count: count ?? 0, index: index ?? 0)
         }
     }
     

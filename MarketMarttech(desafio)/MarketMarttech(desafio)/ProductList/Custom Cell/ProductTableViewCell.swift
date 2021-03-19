@@ -27,17 +27,19 @@ class ProductTableViewCell: UITableViewCell {
     
     func setupCell(withData: CellData, delegate: ProductTableViewCellDelegate?, indexPath: Int?) {
         
-        self.index = indexPath
-        self.productTitle.text = withData.title
-        self.productImage.image = UIImage(named: withData.image ?? "")
-        self.descriptionTextView.text = withData.description
-        self.priceLabel.text = withData.price
+        index = indexPath
+        productTitle.text = withData.title
+        productImage.image = UIImage(named: withData.image ?? "")
+        descriptionTextView.text = withData.description
+        priceLabel.text = withData.price
         self.delegate = delegate
     }
     
     @IBAction func tappedAddCart(_ sender: Any) {
         guard let index = index else { return }
-        self.delegate?.tappedButton(index: index)
+        delegate?.tappedButton(index: index)
+        count = 0
+        countLabel.text = count.description
     }
     
     @IBAction func tapPlusAction(_ sender: Any) {
