@@ -20,7 +20,6 @@ class CartViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var toCheckoutButton: UIButton!
     var viewModel = CartViewModel()
-    
     var recipeProducts:[Product] = []
     var recipeQuantity:[Int] = []
     var recipePrice:[Double] = []
@@ -33,14 +32,13 @@ class CartViewController: UIViewController {
         viewModel.cartQuantity = recipeQuantity
         self.totalPriceLabel.text = String("R$ \(viewModel.getTotalOrderPrice())")
         self.itensQuantityLabel.text = String(viewModel.getReduceTotalQuantity())
-        
         self.setupButton()
         self.cartTableView.delegate = self
         self.cartTableView.dataSource = self
         self.cartTableView.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "CartTableViewCell")
     }
     
-    func setupButton(){
+    func setupButton() {
         
         self.toCheckoutButton.layer.borderColor = CGColor(red: 0/155, green: 0/155, blue: 0/155, alpha: 1.0)
         self.toCheckoutButton.layer.borderWidth = 3
@@ -60,29 +58,28 @@ class CartViewController: UIViewController {
             checkout?.recipeQuantity = viewModel.cartQuantity
         }
     }
-//    func showAlert(title: String, message: String, style: UIAlertController.Style = .alert, index: Int) {
-//        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: style)
-//
-//        let cancelButton:UIAlertAction = UIAlertAction(title: "Cancelar", style: .cancel) { action in
-//            self.dismiss(animated: true, completion: nil)
-//        }
-//
-//        let okButton:UIAlertAction = UIAlertAction(title: "Ok", style: .default) { [weak self] action in
-//
-//            self?.viewModel.cartProduct.remove(at: index)
-//            self?.viewModel.cartQuantity.remove(at: index)
-//            self?.viewModel.totalPrice?.remove(at: index)
-//            self?.itensQuantityLabel.text = String(self?.viewModel.getReduceTotalQuantity() ?? 0)
-//            self?.cartTableView.reloadData()
-//            self?.viewModel.delegate?.quantityArray(array: self?.viewModel.cartQuantity ?? [])
-//            self?.viewModel.delegate?.priceArray(arru: self?.viewModel.totalPrice ?? [])
-//
-//        }
-//        alert.addAction(okButton)
-//        alert.addAction(cancelButton)
-//        self.present(alert, animated: true, completion: nil)
-//    }
-    
+    func showAlert(title: String, message: String, style: UIAlertController.Style = .alert, index: Int) {
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: style)
+
+        let cancelButton:UIAlertAction = UIAlertAction(title: "Cancelar", style: .cancel) { action in
+            self.dismiss(animated: true, completion: nil)
+        }
+
+        let okButton:UIAlertAction = UIAlertAction(title: "Ok", style: .default) { [weak self] action in
+
+            self?.viewModel.cartProduct.remove(at: index)
+            self?.viewModel.cartQuantity.remove(at: index)
+            self?.viewModel.totalPrice?.remove(at: index)
+            self?.itensQuantityLabel.text = String(self?.viewModel.getReduceTotalQuantity() ?? 0)
+            self?.cartTableView.reloadData()
+            self?.viewModel.delegate?.quantityArray(array: self?.viewModel.cartQuantity ?? [])
+            self?.viewModel.delegate?.priceArray(arru: self?.viewModel.totalPrice ?? [])
+
+        }
+        alert.addAction(okButton)
+        alert.addAction(cancelButton)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {

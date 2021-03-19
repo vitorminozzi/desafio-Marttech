@@ -8,7 +8,7 @@
 import UIKit
 
 class CheckoutViewController: UIViewController {
-
+    
     @IBOutlet weak var presentationLabel: UILabel!
     @IBOutlet weak var inputInfoLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -39,12 +39,17 @@ class CheckoutViewController: UIViewController {
     }
     
     @IBAction func tappedCheckoutButton(_ sender: Any) {
-        viewModel.orders.append(Orders(name: nameTextField.text,
-                                       cpf: cpfTextField.text,
-                                       itens: viewModel.getQuantity(),
-                                       total: viewModel.getTotalString(),
-                                       products: viewModel.orderProducts))
-        viewModel.encode(toEncode: viewModel.orders)
+        viewModel.checkout(name: nameTextField.text, cpf: cpfTextField.text)
+        showAlert(title: "Compra Efetuada", message: "Redirecionando catalogo...")
+    }
+    func showAlert(title: String, message: String, style: UIAlertController.Style = .alert) {
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        
+        let okButton:UIAlertAction = UIAlertAction(title: "Ok", style: .default) { [weak self] action in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -57,6 +62,5 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
         let cell:CheckoutTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "CheckoutTableViewCell") as? CheckoutTableViewCell
         cell?.setupCell(withData: viewModel.getCheckoutCellData(index: indexPath.row))
         return cell ?? UITableViewCell()
-}
-
+    }
 }

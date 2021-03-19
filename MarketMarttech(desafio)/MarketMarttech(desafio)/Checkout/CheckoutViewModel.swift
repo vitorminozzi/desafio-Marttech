@@ -12,20 +12,21 @@ class CheckoutViewModel {
     var orderTotal: String?
     var orderQuantity:[Int]?
     var orderProducts:[Product]?
-    var name:String?
-    var cpf:String?
     var orders:[Orders] = []
     
-    func encode(toEncode: [Orders]) {
+    func checkout(name: String?, cpf: String?) {
         
-        do {
-            
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(toEncode)
-            UserDefaults.standard.setValue(data, forKey: "orders")
-        }catch {
-            
-            print("Key???")
+        orders.append(Orders(name: name,
+                             cpf: cpf,
+                             itens: getQuantity(),
+                             total: getTotalString(),
+                             products: orderProducts))
+       
+        if var lastOrders = LocalData.getOrders() {
+            lastOrders.append(contentsOf: orders)
+            LocalData.encode(toEncode: lastOrders)
+        } else {
+            LocalData.encode(toEncode: orders)
         }
     }
     

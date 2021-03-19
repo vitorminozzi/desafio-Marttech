@@ -13,7 +13,6 @@ protocol CartViewModelDelegate: class {
     func priceArray(arru: [Double])
 }
 
-
 class CartViewModel {
     
     var cartProduct: [Product] = []

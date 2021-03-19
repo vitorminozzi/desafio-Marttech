@@ -70,10 +70,10 @@
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <imageReference key="image" image="minus.square.fill" catalog="system" symbolScale="large"/>
+                            <imageReference key="image" image="plus.square.fill" catalog="system" symbolScale="large"/>
                         </state>
                         <connections>
-                            <action selector="tapMinusAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pig-fc-Chs"/>
+                            <action selector="tapPlusAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VUU-hG-2oR"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdD-SN-8kU">
@@ -96,10 +96,10 @@
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <imageReference key="image" image="plus.app.fill" catalog="system" symbolScale="large"/>
+                            <imageReference key="image" image="minus.square.fill" catalog="system" symbolScale="large"/>
                         </state>
                         <connections>
-                            <action selector="tapPlusAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ftf-aJ-oe1"/>
+                            <action selector="tapMinusAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="YqP-yq-iPT"/>
                         </connections>
                     </button>
                 </subviews>
@@ -142,6 +142,6 @@
     <resources>
         <image name="cart.fill.badge.plus" catalog="system" width="128" height="106"/>
         <image name="minus.square.fill" catalog="system" width="128" height="114"/>
-        <image name="plus.app.fill" catalog="system" width="128" height="114"/>
+        <image name="plus.square.fill" catalog="system" width="128" height="114"/>
     </resources>
 </document>

@@ -449,8 +449,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oef-jf-g7Q">
-                                <rect key="frame" x="87" y="268" width="240" height="322"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oef-jf-g7Q">
+                                <rect key="frame" x="20" y="268" width="374" height="322"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -522,7 +522,7 @@
                         <outlet property="detailsTitleLabel" destination="4bj-Jm-OBq" id="dLd-CL-o5t"/>
                         <outlet property="itensLabel" destination="JR0-iH-mZd" id="fSi-s1-Ulz"/>
                         <outlet property="itensTextLabel" destination="Pqd-nX-2So" id="tqa-GN-xK8"/>
-                        <outlet property="nameLabel" destination="Y0Y-L0-6Wi" id="p4U-An-qHO"/>
+                        <outlet property="nameLabel" destination="nZ8-4M-7Vt" id="UYQ-LB-IwK"/>
                         <outlet property="nameTextLabel" destination="9mg-Md-iue" id="TBx-Op-9Jl"/>
                         <outlet property="priceLabel" destination="H2u-Zs-2rG" id="3b5-tJ-HDa"/>
                         <outlet property="totalTextLabel" destination="Rej-la-kqv" id="BJc-fB-j77"/>
