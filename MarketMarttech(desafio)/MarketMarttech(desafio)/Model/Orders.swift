@@ -14,4 +14,5 @@ struct Orders: Codable {
     var itens: String?
     var total: String
     var products: [Product]?
+    var quantity: [Int]?
 }

@@ -20,7 +20,8 @@ class CheckoutViewModel {
                              cpf: cpf,
                              itens: getQuantity(),
                              total: getTotalString(),
-                             products: orderProducts))
+                             products: orderProducts,
+                             quantity: orderQuantity))
        
         if var lastOrders = LocalData.getOrders() {
             lastOrders.append(contentsOf: orders)

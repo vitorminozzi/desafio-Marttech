@@ -520,7 +520,7 @@
                         <outlet property="itensTextLabel" destination="Pqd-nX-2So" id="tqa-GN-xK8"/>
                         <outlet property="nameLabel" destination="nZ8-4M-7Vt" id="UYQ-LB-IwK"/>
                         <outlet property="nameTextLabel" destination="9mg-Md-iue" id="TBx-Op-9Jl"/>
-                        <outlet property="priceLabel" destination="H2u-Zs-2rG" id="3b5-tJ-HDa"/>
+                        <outlet property="totalPriceLabel" destination="H2u-Zs-2rG" id="KLx-se-ccJ"/>
                         <outlet property="totalTextLabel" destination="Rej-la-kqv" id="BJc-fB-j77"/>
                     </connections>
                 </viewController>

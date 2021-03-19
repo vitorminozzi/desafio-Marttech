@@ -20,13 +20,23 @@ class OrderListViewModel {
     func getOrdersCellData(index: Int) -> OrderCellData? {
         return OrderCellData(name: getOrdersListName(index: index),
                              cpf: getOrdersListCpf(index: index),
-                             itens: getOrderListItens(index: index),
+                             itens: getReduceQuantity(index: index),
                              total: getOrderListTotal(index: index))
+    }
+    
+    
+    func getReduceQuantity(index: Int) -> String {
+        return orders[index].quantity?.reduce(0, +).description ?? ""
+    }
+    
+    func getEachQuantity(index: Int) -> [Int] {
+        return orders[index].quantity ?? []
     }
     
     func getProducts(index: Int) -> [Product] {
         return orders[index].products ?? []
     }
+    
     
     func getOrdersListName(index: Int) -> String {
         return orders[index].name ?? ""
@@ -47,6 +57,7 @@ class OrderListViewModel {
     func numberOfRows() -> Int {
         orders.count
     }
+    
     
 }
 

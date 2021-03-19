@@ -21,7 +21,8 @@ class DetailsTableViewCell: UITableViewCell {
         
         detailsCellImage.image = UIImage(named: withData.image ?? "")
         detailsCellTitle.text = withData.title
+        detailsPriceTitle.text = withData.price
+        totalPricelLabel.text = withData.subTotalPrice
         detailsItensTitle.text = withData.quantity
-        detailsItensTitle.text = withData.totalPrice
     }
 }

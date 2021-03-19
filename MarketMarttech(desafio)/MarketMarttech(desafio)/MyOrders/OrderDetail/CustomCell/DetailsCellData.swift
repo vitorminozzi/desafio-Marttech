@@ -11,6 +11,7 @@ struct DetailsCellData {
     
     var image: String?
     var quantity: String?
-    var totalPrice: String?
+    var subTotalPrice: String?
     var title: String?
+    var price: String?
 }

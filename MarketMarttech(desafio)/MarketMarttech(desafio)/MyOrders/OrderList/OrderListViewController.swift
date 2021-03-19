@@ -19,9 +19,9 @@ class OrderListViewController: UIViewController {
         viewModel.getOrders()
         DispatchQueue.main.async { [weak self] in
             self?.orderListTableView.reloadData()
-            
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         orderListTableView.register(UINib(nibName: "OrderListTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderListTableViewCell")
@@ -37,6 +37,7 @@ class OrderListViewController: UIViewController {
             details?.recipePrice = viewModel.getOrderListTotal(index: viewModel.currentIndex)
             details?.recipeName = viewModel.getOrdersListName(index: viewModel.currentIndex)
             details?.recipeProducts = viewModel.getProducts(index: viewModel.currentIndex)
+            details?.recipeQuantity = viewModel.getEachQuantity(index: viewModel.currentIndex)
         }
     }
 }
@@ -56,7 +57,7 @@ extension OrderListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.currentIndex = indexPath.row
-        self.performSegue(withIdentifier: SegueType.toDetail.rawValue, sender: nil)
+        performSegue(withIdentifier: SegueType.toDetail.rawValue, sender: nil)
     }
     
     

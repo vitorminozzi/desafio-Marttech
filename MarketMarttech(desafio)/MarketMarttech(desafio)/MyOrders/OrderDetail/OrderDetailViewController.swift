@@ -14,30 +14,35 @@ class OrderDetailViewController: UIViewController {
     @IBOutlet weak var cpfLabel: UILabel!
     @IBOutlet weak var detailsTableView: UITableView!
     @IBOutlet weak var itensLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var nameTextLabel: UILabel!
     @IBOutlet weak var cpfTextLabel: UILabel!
     @IBOutlet weak var itensTextLabel: UILabel!
     @IBOutlet weak var totalTextLabel: UILabel!
-    
     var viewModel = OrderDetailViewModel()
     var recipeName = ""
     var recipeCpf = ""
     var recipePrice = ""
     var recipeItems = ""
     var recipeProducts:[Product] = []
+    var recipeQuantity:[Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        prepareView()
+    }
+    
+    func prepareView() {
         viewModel.cellName = recipeName
         viewModel.cellCpf = recipeCpf
         viewModel.cellPrice = recipePrice
         viewModel.product = recipeProducts
+        viewModel.cellItem = recipeItems
+        viewModel.quantity = recipeQuantity
+        itensLabel.text = viewModel.getReduceQuantity()
         nameLabel.text = viewModel.cellName
         cpfLabel.text = viewModel.cellCpf
-        priceLabel.text = viewModel.cellPrice
-        
+        totalPriceLabel.text = viewModel.cellPrice
         self.detailsTableView.register(UINib(nibName: "DetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailsTableViewCell")
         detailsTableView.delegate = self
         detailsTableView.dataSource = self
