@@ -17,13 +17,17 @@ class ProductListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        prepareView()
+    }
+    
+    func prepareView() {
         viewModel.delegate = self
         viewModel.getProductList()
-        self.productTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductTableViewCell")
-        self.productTableView.delegate = self
-        self.productTableView.dataSource = self
+        productTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductTableViewCell")
+        productTableView.delegate = self
+        productTableView.dataSource = self
     }
+    
     
     @IBAction func tappedGoToCart(_ sender: Any) {
         performSegue(withIdentifier: SegueType.toCart.rawValue, sender: nil)
@@ -39,13 +43,15 @@ class ProductListViewController: UIViewController {
         let okButton:UIAlertAction = UIAlertAction(title: "Ok", style: .default) { action in
             
             self.viewModel.selectedProducts.append(Product(id: self.viewModel.getId(index: self.viewModel.currentIndex),
-                                                            title: self.viewModel.getProductTitle(index: self.viewModel.currentIndex),
-                                                            price: self.viewModel.getOriginalPrice(index: self.viewModel.currentIndex),
-                                                            description: self.viewModel.getDescription(index: self.viewModel.currentIndex),
-                                                            imageString: self.viewModel.getImageString(index: self.viewModel.currentIndex)))
+                                                           title: self.viewModel.getProductTitle(index: self.viewModel.currentIndex),
+                                                           price: self.viewModel.getOriginalPrice(index: self.viewModel.currentIndex),
+                                                           description: self.viewModel.getDescription(index: self.viewModel.currentIndex),
+                                                           imageString: self.viewModel.getImageString(index: self.viewModel.currentIndex)))
             self.viewModel.selectedQuantity.append(self.viewModel.modelCount)
             self.viewModel.selectedPrice.append(self.viewModel.getSelectedTotalPrice(index: self.viewModel.currentIndex))
-            print(self.viewModel.selectedPrice)
+            print(self.viewModel.selectedProducts.count)
+            print(self.viewModel.selectedQuantity.count)
+            print(self.viewModel.selectedPrice.count)
         }
         alert.addAction(okButton)
         alert.addAction(cancelButton)
@@ -57,9 +63,9 @@ class ProductListViewController: UIViewController {
             let cart = segue.destination as? CartViewController
             
             cart?.viewModel.delegate = self
-            cart?.recipePrice = viewModel.selectedPrice
-            cart?.recipeProducts = viewModel.selectedProducts
-            cart?.recipeQuantity = viewModel.selectedQuantity
+            cart?.recipePrice.append(contentsOf: viewModel.selectedPrice)
+            cart?.recipeProducts.append(contentsOf: viewModel.selectedProducts)
+            cart?.recipeQuantity.append(contentsOf: viewModel.selectedQuantity)
         }
     }
 }
@@ -83,6 +89,7 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 extension ProductListViewController: ProductTableViewCellDelegate {
+
     func tappedButton(index: Int) {
         self.viewModel.currentIndex = index
         self.showAlert(title: "Adicionar Produto", message: "Deseja adicionar \(self.viewModel.modelCount) produtos ao carrinho?")
@@ -118,8 +125,6 @@ extension ProductListViewController: CartViewModelDelegate {
     func quantityArray(array: [Int]) {
         self.viewModel.selectedQuantity = array
     }
-    
-    
 }
 
 

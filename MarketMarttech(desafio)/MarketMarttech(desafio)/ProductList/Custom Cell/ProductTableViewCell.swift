@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ProductTableViewCellDelegate: class {
-    
+
     func tappedButton(index: Int)
     func tappedPlusButton(count: Int)
     func tappedMinusButton(count: Int)
@@ -38,7 +38,6 @@ class ProductTableViewCell: UITableViewCell {
     @IBAction func tappedAddCart(_ sender: Any) {
         guard let index = index else { return }
         self.delegate?.tappedButton(index: index)
-        
     }
     
     @IBAction func tapPlusAction(_ sender: Any) {
