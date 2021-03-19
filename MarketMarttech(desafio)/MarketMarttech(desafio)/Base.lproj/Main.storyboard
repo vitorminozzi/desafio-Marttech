@@ -320,9 +320,8 @@
                         <outlet property="inputInfoLabel" destination="AKe-Pb-p5J" id="Man-XC-yTl"/>
                         <outlet property="itensTextLabel" destination="2BH-TY-Tbr" id="ekm-Ag-CAb"/>
                         <outlet property="nameTextField" destination="64j-c1-NWg" id="NLw-Fc-wfi"/>
-                        <outlet property="presentationLabel" destination="f44-Yz-C5f" id="THv-cD-Cmc"/>
                         <outlet property="priceTextLabel" destination="6NL-oi-fnC" id="0A7-xI-cTv"/>
-                        <outlet property="quantityItensLabel" destination="gm3-YZ-Vqe" id="Vbl-aZ-sC2"/>
+                        <outlet property="quantityLabel" destination="gm3-YZ-Vqe" id="Tfe-oa-3bd"/>
                         <outlet property="totalPriceLabel" destination="0PT-6F-a2a" id="diK-iw-O2z"/>
                     </connections>
                 </viewController>

@@ -9,25 +9,28 @@ import UIKit
 
 class CheckoutViewController: UIViewController {
     
-    @IBOutlet weak var presentationLabel: UILabel!
     @IBOutlet weak var inputInfoLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var cpfTextField: UITextField!
     @IBOutlet weak var checkOutTableView: UITableView!
     @IBOutlet weak var itensTextLabel: UILabel!
-    @IBOutlet weak var quantityItensLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var priceTextLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var checkoutButton: UIButton!
+    
     var recipeProducts:[Product] = []
     var recipeQuantity:[Int] = []
-    var recipeTotal: String = ""
+    var recipeTotal: [Double] = []
     var viewModel = CheckoutViewModel()
     let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        prepareView()
+    }
+    
+    func prepareView() {
         self.checkOutTableView.register(UINib(nibName: "CheckoutTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckoutTableViewCell")
         viewModel.orderTotal = recipeTotal
         viewModel.orderQuantity = recipeQuantity
@@ -35,16 +38,16 @@ class CheckoutViewController: UIViewController {
         checkOutTableView.delegate = self
         checkOutTableView.dataSource = self
         totalPriceLabel.text = viewModel.getTotalString()
-        quantityItensLabel.text = viewModel.getQuantity()
+        quantityLabel.text = viewModel.getQuantity()
     }
     
     @IBAction func tappedCheckoutButton(_ sender: Any) {
         viewModel.checkout(name: nameTextField.text, cpf: cpfTextField.text)
         showAlert(title: "Compra Efetuada", message: "Redirecionando catalogo...")
     }
+    
     func showAlert(title: String, message: String, style: UIAlertController.Style = .alert) {
         let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: style)
-        
         let okButton:UIAlertAction = UIAlertAction(title: "Ok", style: .default) { [weak self] action in
             self?.navigationController?.popToRootViewController(animated: true)
         }

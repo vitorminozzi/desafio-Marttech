@@ -9,7 +9,7 @@ import Foundation
 
 class CheckoutViewModel {
     
-    var orderTotal: String?
+    var orderTotal: [Double]?
     var orderQuantity:[Int]?
     var orderProducts:[Product]?
     var orders:[Orders] = []
@@ -54,13 +54,12 @@ class CheckoutViewModel {
         return orderProducts?[index].imageString ?? ""
     }
     
-    
     func getNumberOfRows() -> Int {
         return orderProducts?.count ?? 0
     }
     
     func getTotalString() -> String {
-        return orderTotal ?? " "
+        return "\(orderTotal?.reduce(0, +) ?? 0)"
     }
     
     func getQuantity() -> String {

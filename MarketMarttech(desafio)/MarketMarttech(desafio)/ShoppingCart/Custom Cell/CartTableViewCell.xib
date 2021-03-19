@@ -40,13 +40,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEy-Ne-CKh">
-                        <rect key="frame" x="181" y="119" width="24" height="21"/>
+                        <rect key="frame" x="181" y="119.5" width="24" height="20.5"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal">
-                            <imageReference key="image" image="minus.square.fill" catalog="system" symbolScale="large"/>
+                            <imageReference key="image" image="plus.app.fill" catalog="system" symbolScale="large"/>
                         </state>
                         <connections>
-                            <action selector="minusAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LDZ-gN-wrZ"/>
+                            <action selector="plusAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UEv-cR-GtI"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBx-14-9NA">
@@ -59,13 +59,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTotal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6d-rF-J70">
-                        <rect key="frame" x="247" y="119" width="66" height="21"/>
+                        <rect key="frame" x="247" y="119.5" width="66" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$1500,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ny-xK-1e3">
-                        <rect key="frame" x="321" y="119" width="83" height="21"/>
+                        <rect key="frame" x="321" y="119.5" width="83" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="83" id="dTY-b8-UeN"/>
                         </constraints>
@@ -80,13 +80,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJB-bI-3SN">
-                        <rect key="frame" x="120" y="119" width="24" height="21"/>
+                        <rect key="frame" x="120" y="119.5" width="24" height="20.5"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal">
-                            <imageReference key="image" image="plus.app.fill" catalog="system" symbolScale="large"/>
+                            <imageReference key="image" image="minus.square.fill" catalog="system" symbolScale="large"/>
                         </state>
                         <connections>
-                            <action selector="plusAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="C7H-xX-zoM"/>
+                            <action selector="minusAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zfb-W7-YWo"/>
                         </connections>
                     </button>
                 </subviews>

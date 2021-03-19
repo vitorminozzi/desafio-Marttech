@@ -53,7 +53,7 @@ class CartViewController: UIViewController {
         if segue.identifier == SegueType.toCheckout.rawValue {
             let checkout = segue.destination as? CheckoutViewController
             
-            checkout?.recipeTotal = String("R$ \(viewModel.getTotalPrice())")
+            checkout?.recipeTotal = viewModel.cartTotalPrice ?? []
             checkout?.recipeProducts = viewModel.cartProduct
             checkout?.recipeQuantity = viewModel.cartQuantity
         }
@@ -93,28 +93,9 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         cell?.setupCell(withData: viewModel.getCartCellData(index: indexPath.row),
                         delegate: self,
                         indexPath: indexPath.row,
-                        count:viewModel.getOriginalQuantity(index: indexPath.row))
+                        count:viewModel.getQuantity(index: indexPath.row))
         return cell ?? UITableViewCell()
     }
-//        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//
-//            if editingStyle == UITableViewCell.EditingStyle.delete {
-//
-//                viewModel.cartProduct.remove(at: indexPath.row)
-//                viewModel.cartQuantity.remove(at: indexPath.row)
-//                tableView.deleteRows(at: [indexPath], with: .automatic)
-//                self.cartTableView.reloadData()
-//                print(viewModel.cartProduct)
-//                print(viewModel.cartQuantity)
-//                self.itensQuantityLabel.text = String(viewModel.getReduceTotalQuantity())
-//                self.totalPriceLabel.text = String("R$ \(viewModel.getTotalPrice())")
-//                self.viewModel.delegate?.quantityArray(array: viewModel.cartQuantity)
-//                self.viewModel.delegate?.priceArray(array: viewModel.cartTotalPrice ?? [])
-//
-//
-//            }
-//        }
-
 }
 
 extension CartViewController: CartCellDelegate {

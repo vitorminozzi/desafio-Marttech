@@ -49,10 +49,6 @@ class ProductListViewController: UIViewController {
                                                            imageString: self.viewModel.getImageString(index: self.viewModel.currentIndex)))
             self.viewModel.selectedQuantity.append(self.viewModel.modelCount)
             self.viewModel.selectedPrice.append(self.viewModel.getSelectedTotalPrice(index: self.viewModel.currentIndex))
-            // acompanhar arrays
-            print(self.viewModel.selectedProducts.count)
-            print(self.viewModel.selectedQuantity.count)
-            print(self.viewModel.selectedPrice.count)
         }
         alert.addAction(okButton)
         alert.addAction(cancelButton)
@@ -126,13 +122,10 @@ extension ProductListViewController: CartViewModelDelegate {
     
     func priceArray(array: [Double]) {
         viewModel.selectedPrice = array
-        print(viewModel.selectedPrice.count)
     }
     
     func quantityArray(array: [Int]) {
         viewModel.selectedQuantity = array
-        print(viewModel.selectedQuantity.count)
-        print(viewModel.selectedProducts.count)
     }
 }
 

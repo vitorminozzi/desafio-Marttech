@@ -18,18 +18,16 @@ class ProductListViewModel {
     var selectedPrice: [Double] = []
     var selectedQuantity: [Int] = []
     var selectedProducts: [Product] = []
-    weak var delegate:ProductListViewModelDelegate?
+    weak var delegate: ProductListViewModelDelegate?
     var currentIndex = 0
     var modelCount = 0
     
     func getProductList() {
-        
-        self.network.getData { (success, error) in
+        self.network.getData { success, error in
             
             if error == nil{
                 self.productList = success
                 self.delegate?.successGetProduct(success: true)
-                
             }else{
                 print(error)
                 print("falha ao popular productList")
@@ -42,7 +40,6 @@ class ProductListViewModel {
                         description: self.getDescription(index: index),
                         price: self.getProductPrice(index: index),
                         image: self.getImageString(index: index))
-        
     }
     
     func getSelectedTotalPrice(index: Int) -> Double {

@@ -24,7 +24,7 @@ class CartViewModel {
     func getCartCellData(index: Int) -> CartCell {
         
         return CartCell(image: getCartImage(index: index),
-                        quantity: getQuantity(index: index),
+                        quantity: getQuantityString(index: index),
                         price: getCartPrice(index: index),
                         title: getCartTitles(index: index),
                         totalPrice: getsubtotalPrice(index: index),
@@ -43,11 +43,11 @@ class CartViewModel {
         return "R$\(String(cartProduct[index].price ?? 0))"
     }
     
-    func getOriginalQuantity(index: Int) -> Int {
+    func getQuantity(index: Int) -> Int {
         return cartQuantity[index]
     }
     
-    func getQuantity(index: Int) -> String {
+    func getQuantityString(index: Int) -> String {
    
          return String(cartQuantity[index])
     }
