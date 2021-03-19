@@ -22,7 +22,7 @@ class CheckoutViewModel {
                              total: getTotalString(),
                              products: orderProducts,
                              quantity: orderQuantity))
-       
+        
         if var lastOrders = LocalData.getOrders() {
             lastOrders.append(contentsOf: orders)
             LocalData.encode(toEncode: lastOrders)

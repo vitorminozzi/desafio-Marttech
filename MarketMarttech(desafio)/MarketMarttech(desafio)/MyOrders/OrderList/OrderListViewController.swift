@@ -68,7 +68,6 @@ extension OrderListViewController: UITextFieldDelegate {
             viewModel.getOrders()
             self.searchTextField.resignFirstResponder()
         }
-        
         viewModel.orders = viewModel.filterByName(name: searchTextField.text ?? "")
         orderListTableView.reloadData()
         self.searchTextField.resignFirstResponder()

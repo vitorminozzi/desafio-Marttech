@@ -8,7 +8,7 @@
 import UIKit
 
 class CheckoutTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var logoCheckoutImage: UIImageView!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var checkOutTitleLabel: UILabel!

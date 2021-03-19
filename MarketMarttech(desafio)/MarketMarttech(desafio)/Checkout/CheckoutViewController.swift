@@ -39,6 +39,8 @@ class CheckoutViewController: UIViewController {
         checkOutTableView.dataSource = self
         totalPriceLabel.text = viewModel.getTotalString()
         quantityLabel.text = viewModel.getQuantity()
+        self.nameTextField.delegate = self
+        self.cpfTextField.delegate = self
     }
     
     @IBAction func tappedCheckoutButton(_ sender: Any) {
@@ -65,5 +67,17 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
         let cell:CheckoutTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "CheckoutTableViewCell") as? CheckoutTableViewCell
         cell?.setupCell(withData: viewModel.getCheckoutCellData(index: indexPath.row))
         return cell ?? UITableViewCell()
+    }
+}
+
+extension CheckoutViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            cpfTextField.becomeFirstResponder()
+        }else {
+            cpfTextField.resignFirstResponder()
+        }
+        return true
     }
 }
