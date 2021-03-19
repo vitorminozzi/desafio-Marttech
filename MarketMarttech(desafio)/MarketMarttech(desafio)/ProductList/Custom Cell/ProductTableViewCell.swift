@@ -44,17 +44,17 @@ class ProductTableViewCell: UITableViewCell {
     
     @IBAction func tapPlusAction(_ sender: Any) {
         
-        self.count = self.count + 1
-        self.countLabel.text = self.count.description
-        self.delegate?.tappedPlusButton(count: self.count)
+        count = self.count + 1
+        countLabel.text = count.description
+        delegate?.tappedPlusButton(count: self.count)
     }
     
     @IBAction func tapMinusAction(_ sender: Any) {
         
-        if self.count != 0 {
-            self.count = self.count - 1
-            self.countLabel.text = self.count.description
-            self.delegate?.tappedMinusButton(count: self.count)
+        if  count != 0 {
+            count = count - 1
+            countLabel.text = self.count.description
+            delegate?.tappedMinusButton(count: self.count)
         }
     }
     
