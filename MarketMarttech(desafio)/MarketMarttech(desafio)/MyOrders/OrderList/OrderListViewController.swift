@@ -8,7 +8,7 @@
 import UIKit
 
 class OrderListViewController: UIViewController {
-
+    
     @IBOutlet weak var orderListTitleLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var orderListTableView: UITableView!
@@ -21,9 +21,9 @@ class OrderListViewController: UIViewController {
             self?.orderListTableView.reloadData()
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.delegate = self
         orderListTableView.register(UINib(nibName: "OrderListTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderListTableViewCell")
         orderListTableView.delegate = self
         orderListTableView.dataSource = self
@@ -59,6 +59,20 @@ extension OrderListViewController: UITableViewDelegate, UITableViewDataSource {
         viewModel.currentIndex = indexPath.row
         performSegue(withIdentifier: SegueType.toDetail.rawValue, sender: nil)
     }
+}
+
+extension OrderListViewController: UITextFieldDelegate {
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text == nil {
+            viewModel.getOrders()
+            self.searchTextField.resignFirstResponder()
+        }
+        
+        viewModel.orders = viewModel.filterByName(name: searchTextField.text ?? "")
+        orderListTableView.reloadData()
+        self.searchTextField.resignFirstResponder()
+        self.searchTextField.text = nil
+        return true
+    }
 }

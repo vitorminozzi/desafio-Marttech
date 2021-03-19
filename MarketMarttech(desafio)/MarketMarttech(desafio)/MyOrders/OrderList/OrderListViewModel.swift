@@ -12,6 +12,7 @@ class OrderListViewModel {
     var orders:[Orders] = []
     let userDefault = UserDefaults.standard
     var currentIndex = 0
+    var refreshOrders:[Orders] = []
     
     func getOrders() {
         orders = LocalData.getOrders() ?? []
@@ -56,6 +57,12 @@ class OrderListViewModel {
     
     func numberOfRows() -> Int {
         orders.count
+    }
+    
+    func filterByName(name: String) -> [Orders] {
+        let filterOrders = orders.filter{$0.name == name}
+        print(filterOrders)
+        return filterOrders
     }
     
     
